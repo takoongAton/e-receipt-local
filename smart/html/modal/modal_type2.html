@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+
+<div class="dim" style="display:block;"></div>
+<div class="modal_alert" id="test1" style="display:block;">
+	<div class="txt_wrap">
+		<p class="txt">내 위치 확인을 위해 사용기기 및 브라우저의 설정에서 '위치정보' 사용을 허용해 주세요.</p>
+	</div>
+	<div class="btn_group">
+		<div><button type="button" class="next"><span>확인</span></button></div>
+	</div>
+</div><!-- // modal_alert -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	$(".modal_alert button").on("click", function(){
+		$(".dim").hide();
+		$(this).parents(".modal_alert").hide();
+	})
+
+	$(".pop_footer .cancel").on("click", function(){
+		$(this).parents(".popup").slideUp(200);
+	})
+
+})
+</script>
+
+</body>
+</html>
+

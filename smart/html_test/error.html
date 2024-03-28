@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap viewport">
+
+
+	<div class="container">
+		<div class="error_wrap">
+			<div class="error">
+				<div class="tit">서비스 이용에<br />불편을 드려 죄송합니다.</div>
+				<p class="txt">서비스 연결이 원활하지 않으니<br />잠시 후 다시 시도해 주세요.</p>
+			</div>
+		</div><!-- // general_wrap -->
+	</div><!-- // container -->
+
+	<div class="f_btn_group">
+		<div class="btn_group">
+			<div><button type="button" class="next"><span>이전으로</span></button></div>
+		</div>
+	</div>
+
+</div><!-- // wrap -->
+
+
+
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+})
+</script>
+
+
+<script src="../js/temp.js"></script>
+
+</body>
+</html>
+

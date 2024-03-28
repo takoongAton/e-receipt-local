@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap page_popup">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">스마트전자영수증을 통해<br />간편하고 편리하게<br />이용내역을 확인해 보세요.</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header>
+
+	<div class="demo_container">
+
+		<div class="demo_agree_wrap">
+			<p class="txt">스마트 전자영수증은 개인정보수집, 이용동의에 동의 후 이용 가능합니다.</p>
+			<div class="agree_wrap">
+				<div class="is_chk_all"><input type="checkbox" id="chk0"><label for="chk0">모든 약관에 전체 동의 합니다.</label></div>
+				<div class="is_chk"><input type="checkbox" id="chk1"><label for="chk1">개인정보 수집 및 이용 동의 (필수)</label><span>보기</span></div>
+				<div class="is_chk"><input type="checkbox" id="chk2"><label for="chk2">개인정보 제3자 제공 동의 (필수)</label><span>보기</span></div>
+			</div>
+		</div><!-- // demo_agree_wrap -->
+
+	</div><!-- // demo_container -->
+
+	<div class="f_btn_group">
+		<div class="btn_group">
+			<div><button type="button" class="next"><span>다음</span></button></div>
+		</div>
+	</div>
+
+
+	<!-- <div class="footer">
+		<h2 class="logo"><span><img src="../images/common/logo_aton.png" alt="ATON" /></span></h2>
+		<ul>
+			<li><a href="#g">서비스 이용약관</a></li>
+			<li><a href="#g">개인정보 취급방침</a></li>
+		</ul>
+	</div> --><!-- // footer -->
+</div><!-- // wrap -->
+
+
+
+<script>
+$(document).ready(function(){
+
+		$('.is_chk_all input').on('click',function(){
+			/*var chkAll = $(this).is(":checked");*/
+			var chkAll = $(this).prop('checked');
+
+			if(chkAll){
+				$('.is_chk input').prop('checked', true);
+			}else{
+				$('.is_chk input').prop('checked', false);
+			}
+		})
+
+		var chkNum = $('.is_chk').length;
+
+		$('.is_chk input').on('click',function(){
+			var chkAtiveNum = $('.is_chk input:checked').length;
+
+			if(chkNum == chkAtiveNum){
+				$('.is_chk_all input').prop('checked', true);
+			}else{
+				$('.is_chk_all input').prop('checked', false);
+			}
+		})
+
+})
+</script>
+
+
+<script src="../js/temp.js"></script>
+
+
+</body>
+</html>

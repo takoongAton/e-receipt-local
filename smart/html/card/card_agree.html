@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">BC카드 영수증 등록</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+		<div class="card_accept_wrap">
+			<form action="">
+				<div class="tit">제휴카드사 영수증 받기를 위한<br /> 약관 동의가 필요합니다.</div>
+
+				<div class="chk_wrap">
+					<div class="chk">
+						<label><input type="checkbox" id="chk0" checked=""><span class="checkmark"></span><span class="txt">모든 약관에 전체 동의합니다.</span></label>
+					</div>
+					<div class="chk">
+						<label><input type="checkbox" id="chk1" checked=""><span class="checkmark"></span><span class="txt">개인정보 제3자 제공동의(카드사)</span><span class="required">[필수]</span></label>
+					</div>
+				</div>
+
+				<div class="card_agree_txt_wrap">
+					<div>
+						전자영수증 서비스(이하 “서비스”)와 관련하여, 본인은 동의 내용을 숙지하였으며, 이에 따라 주식회사 케이티(이하 “회사”)가 수집한 본인의 개인정보를 아래와 같이 제3자에게 제공하는 것에 대해 동의합니다.<br /><br />
+						
+						1.	제공받는 자와 이용 목적, 제공 받는 개인 정보 항목<br />
+						-	제공받는 자 : BC카드<br />
+						-	제공받는 자의 개인정보 이용 목적 : 디지털 매출전표 서비스 신청자 확인 및 조회<br />
+						-	개인정보 제공 항목 : CI, 휴대폰번호, 영수증 식별정보<br /><br />
+						
+						2.	제공받는 자의 개인정보 보유 및 이용기간<br />
+						-	개인정보는 본 서비스를 제공하는 기간 동안에 보유 및 이용되고, 이용자의 서비스 해지(회원탈퇴) 시 해당인의 개인정보가 열람 또는 이용될 수 없도록 파기 처리합니다. <br />
+						단, 아래의 경우는 예외로 합니다.<br />
+						①	법령에서 따로 정하는 경우에는 해당 기간까지 보유<br />
+						②	서비스 이용 후의 민원 처리를 위하여 내부 지침에 따라 서비스 이용 후 1년간 (CI, 휴대폰번호, 전자영수증 식별정보, 그린 포인트)를 보관합니다.<br /><br />
+						
+						<span class="careful">※ 고객은 개인정보의 제3자 제공에 대한 동의를 거부할 권리가 있으며, 동의를 거부할 경우 받는 별도의 불이익은 없습니다. 단, 서비스 이용이 불가능하거나, 서비스 이용 목적에 따른 서비스 제공에 제한이 따르게 됩니다.</span>
+					</div>
+				</div>
+
+				<div class="chk_wrap">
+					<div class="chk">
+						<label><input type="checkbox" id="chk2" checked=""><span class="checkmark"></span><span class="txt">[BC카드] 유료 승인 알림 서비스 약관</span><span class="required">[필수]</span></label>
+					</div>
+				</div>
+				
+				<div class="card_agree_txt_wrap">
+					<div>
+						<strong>BC카드의 서비스 대상</strong><br />
+						- 우리카드, SC제일BC, NH농협BC, IBK기업BC, KB국민BC, DGB대구BC, BNK부산BC, BNK경남BC, 한국씨티BC, 신한BC<br /><br />
+						
+						<strong>BC카드가 제공하는 모바일 이용 알림 항목</strong><br />
+						1.	국내 승인내역<br />
+						-	국내 신용일시불·할부 승인 / 국내 체크카드 승인 / 체크카드(하이브리드카드) 잔액부족 신용결제승인 / SAVE 승인 / 단기카드대출(현금서비스) 승인 등<br />
+						2.	국내승인취소 내역<br />
+						-	국내 신용 일시불·할부 취소 / 국내 체크카드 취소 / 단기카드대출(현금서비스) 승인취소 등<br />
+						3.	해외승인 내역<br />
+						-	해외 신용·체크 승인 / 체크카드 해외 원화 승인 후 알림 메시지 / 해외 단기카드대출(현금서비스) 승인 등<br />
+						4.	해외승인취소 내역<br />
+						-	해외 신용·체크카드 승인취소 / 해외단기카드대출(현금서비스) 승인취소 등<br />
+						5.	국내·해외 승인거절 내역<br />
+						-	거래불가 / 거래정지 / 한도초과 등<br />
+						6.	국내․해외매입 이후 매출취소 안내<br />
+						-	국내 사용 분 매입 이후 매출취소 등<br />
+						7.	당월 결제예정금액 및 결제일 안내 등<br />
+						-	결제예정금액(리볼빙, 전액결제) / 후불교통요금 / 기타카드대금 결제 관련 내용 등<br />
+						8.	자동이체결제 내역<br />
+						-	아파트 관리비 / 통신료 / 렌트료 / 보험료 / 임대료 등<br />
+						9.	휴대폰 메시지 서비스 가입신청 및 해지 안내<br />
+						-	휴대폰 메시지 서비스 신청 등록완료 및 해지신청·결과 <br /><br />
+						
+						※ 상기 모바일 이용 알림 내역은 휴대폰메시지표준약관에 따라 제공되는 항목으로 향후 추가될 수 있으며, 일부 항목에 대해서는 기존과 같이 SMS(문자알림)로 발송될 수 있습니다.<br /><br />
+						
+						※ 이동통신망으로 수신 시 요금제에 따라 데이터요금이 별도부과 될 수 있습니다.<br /><br />
+						
+						※ 월 300 TOP포인트의 이용료로 카드이용내역 및 변경내역 알림을 받을 수 있습니다.<br /><br />
+						
+						※ 기존에 카드 승인 및 안내성 문자를 SMS로 받으시던 고객은 중복 청구되지  않습니다. <br /><br />
+						
+						※ 스마트전자영수증 서비스 채널로 가입할 경우, 기존에 이용하신 SMS, 알림톡 또는 기타 채널은 일시 중단되고, 스마트전자영수증앱으로 승인 푸시가 전송됩니다.<br /><br />
+						
+						※ 네트워크 상태 및 사용자 환경 요인으로 영수증 도착 알림을 받지 못할 경우, SMS(문자알림)으로 대체 발송될 수 있습니다.<br /><br />
+						
+						※ 스마트전자영수증 서비스 채널을 해지할 경우, 기존의 가입하신 SMS, 알림톡 또는 기타채널로 다시 수신됩니다.
+					</div>
+				</div>
+			</form>
+		</div><!-- // open_receipt_wrap -->
+	</div><!-- // container -->
+
+	<div class="f_btn_group">
+		<div class="btn_group">
+			<div><button type="button" class="next"><span>다음</span></button></div>
+		</div>
+	</div>
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+</body>
+</html>
+

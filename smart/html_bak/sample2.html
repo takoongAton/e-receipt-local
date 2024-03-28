@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap viewport">
+	<div class="header">
+		<ul class="gnb">
+			<li class="on"><span>홈</span></li>
+			<li><span>이용내역</span></li>
+			<li><span>이용안내</span></li>
+			<li><span>설정</span></li>
+		</ul>
+	</div><!-- // header -->
+
+	<div class="container_wrap">
+
+		<div class="search_wrap">
+			<form action="">
+				<div class="term">
+					<ul>
+						<li>
+							<input type="radio" name="ra1" id="ra1">
+							<label for="ra1">
+								<span>1주일</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra2">
+							<label for="ra2">
+								<span>1개월</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra3">
+							<label for="ra3">
+								<span>3개월</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra4">
+							<label for="ra4">
+								<span>기간설정</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+
+				<div class="select_group">
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+				</div>
+				<button type="button" class="btn"><span>조회</span></button>
+			</form>
+		</div><!-- // search_wrap -->
+
+
+<style>
+.result_wrap {margin-top:32px;}
+.result_wrap .total_wrap {display:flex; justify-content:space-between; width:100%; padding:0 30px 19px; font-size:24px;}
+.result_wrap .total_wrap strong {font-weight:700;}
+.result_wrap .search_date {display:flex; justify-content:space-between; width:100%; height:50px; padding:17px 30px 16px; background-color:#f5f5f5; font-size:14px;}
+.result_wrap .search_date * {vertical-align:top;}
+.result_wrap .search_date div {position:relative;}
+.result_wrap .search_date div.date {font-size:14px; line-height:1;}
+.result_wrap .search_date div > button.edit {font-size:14px; display:inline; line-height:1;}
+.result_wrap .search_date ul {display:none; position:absolute; right:0; top:100%; padding:14px 20px; background-color:#fff; z-index:1000; border-radius:3px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.06)}
+.result_wrap .search_date ul li button {height:31px; white-space:nowrap; text-align:left;}
+
+
+.result_wrap .result_list {}
+.result_wrap .result_list div.item {display:flex; position:relative; justify-content:space-between; width:100%; padding:25px 30px 24px; border-bottom:1px solid #eee;}
+.result_wrap .result_list div.item > div {position:relative;}
+.result_wrap .result_list div.item .chk {width:34px; animation:chk_test 0.2s 1;}
+.result_wrap .result_list div.item .chk input[type="checkbox"] {position:absolute; top:0; left:0; border:0 none; opacity:0;}
+.result_wrap .result_list div.item .chk input[type="checkbox"] + span.checkmark {display:inline-block; position:absolute; top:50%; width:22px; height:22px; background:url('../images/common/icon_chkmark.png') no-repeat left top; background-size:22px 44px; transform:translateY(-50%); border-radius:100%;}
+.result_wrap .result_list div.item .chk input[type="checkbox"]:checked + span.checkmark {background-position:left bottom;}
+
+.result_wrap .result_list div.item .txt_wrap {flex:1;}
+.result_wrap .result_list div.item .txt_wrap > div {display:flex; justify-content:space-between; width:100%;}
+.result_wrap .result_list div.item .txt_wrap div + div {margin-top:4px; color:#888; font-size:14px;}
+.result_wrap .result_list div.item .txt_wrap div:first-of-type {color:#111; line-height:24px;}
+.result_wrap .result_list div.item .txt_wrap div:first-of-type span.co {font-size:18px;}
+.result_wrap .result_list div.item .txt_wrap div:first-of-type span.pay {font-size:20px;}
+.result_wrap .result_list div.item .txt_wrap del {color:#ff4a74;}
+
+.result_wrap .result_list div.item .clear {width:74px; animation:clear_test 0.2s 1;}
+.result_wrap .result_list div.item .clear button {position:absolute; top:50%; right:0; width:54px; height:26px; background-color:#111; border:1px solid #111; border-radius:100px; color:#fff; font-size:13px; transform:translateY(-50%);}
+.result_wrap .result_list div.item .clear button[disabled] {background-color:#fff; border-color:#ddd; color:#888;}
+
+/* @keyframes chk_test {
+	0% {width:0;}
+	100% {width:34px;}
+}
+
+@keyframes clear_test {
+	0% {width:0;}
+	100% {width:74px;}
+} */
+</style>
+		<div class="result_wrap">
+			<div class="total_wrap">
+				<div><span>총<strong>32</strong>건</span></div>
+				<div><span><strong>54,860</strong>원</span></div>
+			</div>
+
+			<div class="search_date">
+				<div class="date">2020.06.24 - 2020.06.30</div>
+				<div>
+					<button type="button" class="edit"><span>편집</span></button>
+					<ul>
+						<li><button type="button"><span>목록숨김</span></button></li>
+						<li><button type="button"><span>숨김목록 관리</span></button></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="result_list">
+				<!-- <div class="item">
+					<div class="chk is_chk">
+						<label><input type="checkbox" id="chk1"><span class="checkmark"></span></label>
+					</div>
+					<div class="txt_wrap">
+						<div>
+							<span class="co">공차</span>
+							<del><span class="pay"><strong>15,900</strong>원</span></del>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+					<div class="clear">
+						<button type="button"><span>해제</span></button>
+					</div>
+				</div> -->
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">공차</span>
+							<span class="pay"><strong>15,900</strong>원</span>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+					<div class="clear">
+						<button type="button"><span>해제</span></button>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="chk is_chk">
+						<label><input type="checkbox" id="chk1"><span class="checkmark"></span></label>
+					</div>
+					<div class="txt_wrap">
+						<div>
+							<span class="co">파리바게트</span>
+							<span class="pay"><strong>9,300</strong>원</span>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">노브랜드 고양행신점</span>
+							<span class="pay"><strong>1,500</strong>원</span>
+						</div>
+						<div>
+							<span class="card">BC카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">스타벅스</span>
+							<del><span class="pay"><strong>4,800</strong>원</span></del>
+						</div>
+						<div>
+							<span class="card">시티카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+			</div><!-- // result_list -->
+			
+		</div><!-- // result_wrap -->
+
+	</div><!-- // container_wrap -->
+
+
+	<!-- <div class="footer">
+		<h2 class="logo"><span><img src="../images/common/logo_aton.png" alt="ATON" /></span></h2>
+		<ul>
+			<li><a href="#g">서비스 이용약관</a></li>
+			<li><a href="#g">개인정보 취급방침</a></li>
+		</ul>
+	</div> --><!-- // footer -->
+
+
+</div><!-- // wrap -->
+
+<div style="display:none; position:fixed; top:0; right:0; bottom:0; left:0; background-color:rgba(0,0,0,0.2); z-index:100"></div>
+
+<style>
+.xx {display:none; position:fixed; left:0; bottom:0; width:100%; height:170px; padding-top:4px;  background-color:#fff; z-index:1000; text-align:center;}
+.xx .title {height:50px; line-height:50px; font-size:16px;}
+.xx .setDate_wrap {display:flex;  width:100%; padding:4px 20px 20px;}
+.xx .setDate_wrap div {flex:1;}
+.xx .setDate_wrap span {position:relative; width:27px; text-align:center; line-height:40px;}
+/* .xx .setDate_wrap span::before {content:""; display:block; position:absolute; top:50%; left:50%; width:10px; height:1px; background-color:#111; transform:translate(-50%,-50%);} */
+.xx .setDate_wrap div input[type="date"] {display:block; width:100%; height:40px; background-color:#fff; border:1px solid #ddd; text-align:center; background-color:#fff; border-radius:3px; line-height:40px;}
+.xx .setDate_wrap div input[type="date"] * {margin:0 auto; text-align:center;}
+.xx button.submit {height:52px; background-color:#437fec; color:#fff;}
+.xx button.close {position:absolute; right:16px; top:15px; width:28px; height:28px;}
+</style>
+<div class="xx">
+	<div class="title">기간설정</div>
+	<div class="setDate_wrap">
+		<div><input type="date" value="2018-07-22"></div>
+		<span>-</span>
+		<div><input type="date" value="2018-07-22"></div>
+	</div>
+	<button type="button" class="submit"><span>조회</span></button>
+	<button type="button" class="close"><img src="../images/common/btn_close.png" alt="닫기" /></button>
+</div>
+
+
+<style>
+.popup {position:fixed; top:0; right:0; bottom:0; left:0; background-color:rgba(255,255,255,0.8); z-index:10;}
+.popup h2.title {position:sticky; top:0; font-size:22px; background-color: #fff; z-index:}
+</style>
+<div class="popup">
+	<h2 class="title">전자영수증 상세냉겨 조회</h2>
+	<div>내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br />내용이 들어갑니다.<br /></div>
+	<button type="button" class="close"><span>닫기</span></button>
+</div>
+
+
+
+<script src="../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+/* 테스트용 임시 스크립트 */
+
+
+
+	$(".term li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+	})
+
+	$("button").on("click", function(){
+		$("body").addClass("fixed")
+	})
+
+})
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="stylesheet" href="../../css/slick.css" />
+	
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">서비스 이용안내</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+		
+		<div class="guide_new">
+
+			<div class="guide_slick_wrap">
+
+				<div class="guide_item">
+					<div class="tit">
+						<p>제휴카드 등록을 통한<br />
+							영수증 수신 방법</p>
+					</div>
+					<div class="img"><img src="../../images/sub/img_guide1_01.png" alt="ㅇㅇㅇ"></div>
+					<ul>
+						<li>
+							<p>제휴카드사드의 카드 알림 이용요금은 카드사의 이용대금 결제 시 청구</p>
+							<p class="em">카드사별 이용요금 상이 (월 200~300원)</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="guide_item">
+					<div class="tit">
+						<p>제휴매장 이용을 통한<br />
+							영수증 수신 방법</p>
+					</div>
+					<div class="img"><img src="../../images/sub/img_guide1_02.png" alt="ㅇㅇㅇ"></div>
+					<ul>
+						<li>
+							<p>개별 카드 등록을 통해 제휴 매장 이용 시 전자영수증 수신 가능</p>
+							<p class="em">제휴매장이 아닌 경우 전자영수증 수신 불가</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="guide_item">
+					<div class="tit">
+						<p>전자영수증 이용내역 확인</p>
+					</div>
+					<div class="img"><img src="../../images/sub/img_guide1_03.png" alt="ㅇㅇㅇ"></div>
+					<ul>
+						<li>
+							<p>이용내역 목록 클릭 시 상세내역 확인 가능</p>
+							<p class="em">이용내역은 최대 6개월까지만 조회 가능</p>
+						</li>
+					</ul>
+				</div>
+
+				<div class="guide_item">
+					<div class="tit">
+						<p>나만의 맞춤형 서비스 제공</p>
+					</div>
+					<div class="img"><img src="../../images/sub/img_guide1_04.png" alt="ㅇㅇㅇ"></div>
+					<ul>
+						<li>
+							<p>내 동의 현황> 동의관리를 통해 선택 동의하면 내 소비분석 조회 가능</p>
+							<p class="em">PASS앱 전자영수증 서비스에서는 선호품목, 맞춤형 쿠폰 혜택만 제공 가능</p>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<!-- // guide_slick_wrap -->
+
+		</div><!-- // guide_new -->
+
+	</div><!-- // container -->
+
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+<script src="../../js/slick.js"></script>
+
+<script>
+	$(document).ready(function(){
+			
+		/* gallery main */
+		function galleryMainSlidk(){
+			$('.guide_slick_wrap').slick({
+				dots: true,
+				dotsClass: "guide_dot",
+				infinite: true,
+				arrows: false
+			});
+		}
+	
+		const guideSlide = document.querySelector(".guide_slick_wrap");
+		let guideSlideItem;
+		if(guideSlide) {
+			guideSlideItem = guideSlide.querySelectorAll(".guide_item");
+			if(guideSlide && guideSlideItem.length > 1) {
+				galleryMainSlidk();
+			}
+		}
+	
+	})
+	</script>
+
+</body>
+</html>

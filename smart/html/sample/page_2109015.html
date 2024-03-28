@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="header">
+			<h1>스마트전자영수증</h1>
+			<div class="tools">
+				<button type="button" class="menu"><span>메뉴</span></button>
+			</div>
+		</div>
+		<div class="gnb_wrap">
+			<ul class="gnb">
+				<li class="on"><span>이용내역</span></li>
+				<li><span>신청관리</span></li>
+				<li><span>내소비분석</span></li>
+				<li><span>내동의현황</span></li>
+			</ul>
+		</div>
+	</header><!-- // header -->
+
+
+	<div class="container">
+
+		컨텐츠
+
+	</div><!-- // container -->
+
+
+</div><!-- // wrap -->
+
+<div class="dim" style="display:none;"></div>
+<div class="footer_layer" id="hide_wrap" style="display:none;">
+	<div class="setDate_wrap">
+		<div class="title">기간설정</div>
+		<form action="">
+			<div class="set_input">
+				<div><input type="date" value="2018-07-22"></div>
+				<span>-</span>
+				<div><input type="date" value="2018-07-22"></div>
+			</div>
+			<button type="button" class="submit"><span>조회</span></button>
+			<button type="button" class="close"><img src="../../images/common/btn_close.png" alt="닫기" /></button>
+		</form>
+	</div>
+</div>
+
+
+<div class="footer_layer" id="hide_btn" style="display:none;">
+	<div class="btn_group">
+		<div><button type="button" class="cancel"><span>취소</span></button></div>
+		<div><button type="button" class="next"><span>숨김</span></button></div>
+	</div>
+</div>
+
+
+
+<div class="aside_wrap">
+	<div class="aside_header">
+		<p>홍길동님, 안녕하세요.</p>
+		<div class="btn"><button type="button" class="aside_close"><span>닫기</span></button></div>
+	</div>
+
+	<div class="aside_section">
+		<div class="aside_group aside_receipt">
+			<div class="tit">영수증관리</div>
+			<ul>
+				<li><a href="#g"><span>영수증 정보 불러오기</span></a></li>
+			</ul>
+		</div>
+
+		<div class="aside_group aside_customer">
+			<div class="tit">고객안내</div>
+			<ul>
+				<li><a href="#g">서비스 이용안내</a></li>
+				<li><a href="#g">공지사항</a></li>
+				<li><a href="#g">FAQ</a></li>
+			</ul>
+		</div>
+
+		<div class="aside_group aside_agree">
+			<div class="tit">약관</div>
+			<ul>
+				<li><a href="#g">이용약관 및 정책</a></li>
+				<li><a href="#g">제휴카드사 영수증 등록 약관동의</a></li>
+			</ul>
+		</div>
+
+		<div class="aside_group aside_set">
+			<div class="tit">설정</div>
+			<ul>
+				<li><a href="#g">알림설정</a></li>
+				<li><a href="#g">서비스 해지</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="aside_footer">
+		<p><strong>앱 버전 v1.0</strong> 최신버전입니다.</p>
+	</div>
+</div><!-- // aside_wrap -->
+
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	/* 테스트용 임시 스크립트 */
+	/* 검색 기간 */
+	$(".term li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+	})
+
+	$(".chk.is_chk").show();
+
+	$(".tab_wrap li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on")
+	})
+
+
+	// containerPadding();
+
+	/*
+	$(".xxx").on("click",function(){
+		$(".page_popup").show();
+	})
+	*/
+
+})
+</script>
+
+</body>
+</html>

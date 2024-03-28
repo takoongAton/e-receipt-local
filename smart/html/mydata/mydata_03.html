@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="header">
+			<h1>스마트전자영수증</h1>
+			<div class="tools">
+				<button type="button" class="menu"><span>메뉴</span></button>
+			</div>
+		</div>
+		<div class="gnb_wrap">
+			<ul class="gnb">
+				<li><span>이용내역</span></li>
+				<li><span>신청관리</span></li>
+				<li><span>내소비분석</span></li>
+				<li class="on"><span>내동의현황</span></li>
+			</ul>
+		</div>
+	</header><!-- // header -->
+
+
+	<div class="container">
+
+		<div class="search_wrap">
+
+			<div class="tab_wrap">
+				<ul>
+					<li>
+						<a href="#g"><span>데이터영수증</span></a>
+					</li>
+					<li>
+						<a href="#g"><span>동의관리</span></a>
+					</li>
+					<li class="on">
+						<a href="#g"><span>데이터 내려받기</span></a>
+					</li>
+				</ul>
+			</div>
+			
+		</div><!-- // search_wrap -->
+
+
+		<div class="mydata_down_wrap">
+			<div class="item_group">
+				<div class="item">
+					<div class="title">기간선택</div>
+					<div class="chk_wrap chk_type2">
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra01">
+								<span class="chktxt">1주일</span>
+							</label>
+						</div>
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra01">
+								<span class="chktxt">2주일</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="title">데이터 선택</div>
+					<div class="chk_wrap chk_type2">
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra02">
+								<span class="chktxt">영수증 항목</span>
+							</label>
+						</div>
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra02">
+								<span class="chktxt">비씨카드결제정보</span>
+							</label>
+						</div>
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra02">
+								<span class="chktxt">비씨카드고객정보</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="title">
+						데이터 형식
+						<button type="button" id="btn_dataType"><span><img src="../../images/icon/icon_tooltip.png" alt="도움말"></span></button>
+					</div>
+					<div class="chk_wrap chk_type2">
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra03">
+								<span class="chktxt">CSV</span>
+							</label>
+						</div>
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra03">
+								<span class="chktxt">JSON</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="title">데이터 저장방법</div>
+					<div class="chk_wrap chk_type2">
+						<div class="chk">
+							<label>
+								<input type="radio" name="ra04">
+								<span class="chktxt">휴대폰 저장</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div><!-- // item_group -->
+		</div><!-- // mydata_down_wrap -->
+
+		<div class="btn board"><button type="button"><span>내려받기</span></button></div>
+
+	</div><!-- // container -->
+
+
+</div><!-- // wrap -->
+
+<div class="dim" style="display:none;"></div>
+<div class="footer_layer" id="hide_wrap" style="display:none;">
+	<div class="setDate_wrap">
+		<div class="title">기간설정</div>
+		<form action="">
+			<div class="set_input">
+				<div><input type="date" value="2018-07-22"></div>
+				<span>-</span>
+				<div><input type="date" value="2018-07-22"></div>
+			</div>
+			<button type="button" class="submit"><span>조회</span></button>
+			<button type="button" class="close"><img src="../../images/common/btn_close.png" alt="닫기" /></button>
+		</form>
+	</div>
+</div>
+
+
+<div class="footer_layer" id="hide_btn" style="display:none;">
+	<div class="btn_group">
+		<div><button type="button" class="cancel"><span>취소</span></button></div>
+		<div><button type="button" class="next"><span>숨김</span></button></div>
+	</div>
+</div>
+
+
+
+<div class="layer dataType" style="display:none;">
+	<p>JavaScript Object Notation (JSON) 은 Javascript 객체 문법으로 구조화된 데이터를 표현하기 위한 문자 기반의 표준 포맷입니다.</p>
+	<div class="img"><img src="../../images/sub/data_format_img.png" alt="데이터형식 이미지"></div>
+	<button type="button" class="close"><img src="../../images/common/btn_close.png" alt="닫기" /></button>
+</div>
+
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	/* 테스트용 임시 스크립트 */
+	/* 검색 기간 */
+	$(".term li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+	})
+
+	$(".chk.is_chk").show();
+
+
+	/* 데이터 형식 보기 샘플 */
+	$("#btn_dataType").on("click", function(){
+		$("div.dim").show();
+		$(".layer.dataType").show();
+	})
+	$(".layer button.close").on("click", function(){
+		$("div.dim").hide();
+		$(this).closest(".layer").hide();
+	})
+
+
+	// containerPadding();
+
+	/*
+	$(".xxx").on("click",function(){
+		$(".page_popup").show();
+	})
+	*/
+
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">타이틀</h2>
+			<div>
+				<button type="button" class="down"><span>내려받기</span></button>
+				<button type="button" class="share"><span>공유하기</span></button>
+				<button type="button" class="close"><span>닫기</span></button>
+			</div>
+		</div>
+	</header><!-- // header -->
+
+
+	<div class="container">
+
+		팝업컨텐츠1
+
+	</div><!-- // container -->
+
+
+</div><!-- // wrap -->
+
+<div class="dim" style="display:none;"></div>
+
+<div class="footer_layer" id="hide_btn" style="display:none;">
+	<div class="btn_group">
+		<div><button type="button" class="cancel"><span>취소</span></button></div>
+		<div><button type="button" class="next"><span>숨김</span></button></div>
+	</div>
+</div>
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	/* 테스트용 임시 스크립트 */
+	/* 검색 기간 */
+	$(".term li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+	})
+
+	$(".chk.is_chk").show();
+
+	$(".tab_wrap li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on")
+	})
+
+
+	// containerPadding();
+
+	/*
+	$(".xxx").on("click",function(){
+		$(".page_popup").show();
+	})
+	*/
+
+})
+</script>
+
+</body>
+</html>

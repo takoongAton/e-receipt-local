@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap page_popup">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">전자영수증 상세내역 조회</h2>
+			<div><button type="button" class="down"><span>다운로드</span></button><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+
+		<div class="receipt_wrap">
+			<div class="receipt_item">
+				<dl>
+					<dt>가맹점명</dt>
+					<dd>공차 고속터미널점</dd>
+				</dl>
+				<dl>
+					<dt>대표자</dt>
+					<dd>김민채</dd>
+				</dl>
+				<dl>
+					<dt>사업자No</dt>
+					<dd>128-87-06507</dd>
+				</dl>
+				<dl>
+					<dt>업종</dt>
+					<dd>음식</dd>
+				</dl>
+				<dl>
+					<dt>전화번호</dt>
+					<dd>02-537-4991</dd>
+				</dl>
+				<dl>
+					<dt>주소</dt>
+					<dd>서울 서초구 신반포로 194 (반포동) 18호</dd>
+				</dl>
+			</div>
+
+			<div class="receipt_table">
+
+				<div class="total">
+					<div>
+						<span class="txt">공급가</span>
+						<span class="money">4,818</span>
+					</div>
+					<div>
+						<span class="txt">부가세</span>
+						<span class="money">482</span>
+					</div>
+					<div>
+						<span class="txt">봉사료</span>
+						<span class="money">0</span>
+					</div>
+				</div>
+
+				<div class="sum">
+					<span>결제금액</span>
+					<span>15,900</span>
+				</div>
+			</div><!-- // receipt_table -->
+
+			<div class="receipt_item">
+				<div class="tit">[신한카드 신용승인]</div>
+				<dl>
+					<dt>승인일시</dt>
+					<dd>2020-07-01 16:05:16</dd>
+				</dl>
+				<dl>
+					<dt>승인번호</dt>
+					<dd>74255341</dd>
+				</dl>
+				<dl>
+					<dt>할부개월</dt>
+					<dd>00</dd>
+				</dl>
+				<dl>
+					<dt>승인금액</dt>
+					<dd>15,900</dd>
+				</dl>
+				<dl>
+					<dt>가맹번호</dt>
+					<dd>70146435</dd>
+				</dl>
+				<dl>
+					<dt>알림</dt>
+					<dd>본 영수증은 종이영수증과동일한 내용입니다.</dd>
+				</dl>
+			</div>
+
+			<div class="map"><img src="../images/temp/sam_map.png" alt="지도" /></div>
+
+		</div><!-- receipt_wrap -->
+
+	</div><!-- // container -->
+
+
+</div><!-- // wrap -->
+
+
+
+
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+})
+</script>
+
+
+<script src="../js/temp.js"></script>
+
+</body>
+</html>
+

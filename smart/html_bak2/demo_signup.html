@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/common/favicon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+
+<div class="wrap viewport">
+
+	<div class="demo_container">
+
+		<div class="demo_agree_wrap">
+			<div class="tit">스마트전자영수증을 통해<br />간편하고 편리하게<br />이용내역을 확인해 보세요.</div>
+			<p class="txt">스마트 전자영수증은 개인정보수집, 이용동의에 동의 후 이용 가능합니다.</p>
+			
+			<div class="open_receipt_wrap" style="padding:32px 0 0;">
+				<form action="">
+					<div class="set_input">
+						<div class="tit">휴대폰 번호</div>
+						<input type="tel" placeholder="- 없이 숫자만 입력해주세요." value="010-1234-****">
+					</div>
+					<div class="set_input">
+						<div class="tit">이름</div>
+						<input type="tel" placeholder="이름을 입력해주세요." value="홍길동">
+					</div>
+					<!-- <dl>
+						<dt>* 유의사항</dt>
+						<dd>유의사항이 들어갑니다.</dd>
+						<dd>유의사항이 들어갑니다.</dd>
+						<dd>유의사항이 들어갑니다.</dd>
+						<dd>유의사항이 들어갑니다.</dd>
+					</dl> -->
+				</form>
+			</div>
+
+		</div><!-- // demo_agree_wrap -->
+
+	</div><!-- // demo_container -->
+
+	<div class="f_btn_group">
+		<button type="button" class="next"><span>다음</span></button>
+		<!-- <button type="button" class="cancel"><span>ㅁㄴㅇㄹ</span></button> -->
+	</div>
+
+
+	<!-- <div class="footer">
+		<h2 class="logo"><span><img src="../images/common/logo_aton.png" alt="ATON" /></span></h2>
+		<ul>
+			<li><a href="#g">서비스 이용약관</a></li>
+			<li><a href="#g">개인정보 취급방침</a></li>
+		</ul>
+	</div> --><!-- // footer -->
+</div><!-- // wrap -->
+
+
+
+<script>
+$(document).ready(function(){
+
+		$('.is_chk_all input').on('click',function(){
+			/*var chkAll = $(this).is(":checked");*/
+			var chkAll = $(this).prop('checked');
+
+			if(chkAll){
+				$('.is_chk input').prop('checked', true);
+			}else{
+				$('.is_chk input').prop('checked', false);
+			}
+		})
+
+		var chkNum = $('.is_chk').length;
+
+		$('.is_chk input').on('click',function(){
+			var chkAtiveNum = $('.is_chk input:checked').length;
+
+			if(chkNum == chkAtiveNum){
+				$('.is_chk_all input').prop('checked', true);
+			}else{
+				$('.is_chk_all input').prop('checked', false);
+			}
+		})
+
+})
+</script>
+
+</body>
+</html>

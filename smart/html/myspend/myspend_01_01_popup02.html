@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit"><strog>카페라떼</strog> 추천 결과</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header>
+
+	
+	<div class="container">
+
+		<div class="popupContent">
+
+			<div class="result_recommend">
+
+				<div class="current_space">
+					<div>
+						<p>여의도 인근</p>
+						<button type="button"><span><img src="../../images/icon/icon_myspace.png" alt="현재위치선택"></span></button>
+					</div>
+					<p class="txt"><span>1km</span> 반경, <span>방문횟수가 많은순</span> 입니다.</p>
+				</div>
+
+		
+				<div class="place_menu_list">
+					<div class="item">
+						<dl class="company_name">
+							<dt>만랩커리 상암점</dt>
+							<dd>
+								<p>1.5km</p>
+								<p>방문횟수 15회</p>
+								<p>해당품목가격 3,800원</p>
+							</dd>
+						</dl>
+						<dl class="company_time">
+							<dt>요일 / 시간대 분포</dt>
+							<dd>
+								<div class="chart" style="">
+									<canvas id="myChart"></canvas>
+								</div>
+								<div class="weekTxt">
+									<p class="mon"><span></span>월요일</p>
+									<p class="tue"><span></span>화요일</p>
+									<p class="wed"><span></span>수요일</p>
+									<p class="thu"><span></span>목요일</p>
+									<p class="fri"><span></span>금요일</p>
+									<p class="sat"><span></span>토요일</p>
+									<p class="sun"><span></span>일요일</p>
+								</div>
+							</dd>
+							<dd class="txt">
+								<p>해당 상점은 주로 화요일 오후 6:00 시간대 많이 복잡해요. 해당 시간을 피해서 방문해보세요!</p>
+							</dd>
+						</dl>
+						<dl class="company_visit">
+							<dt><span>내소비분석</span></dt>
+							<dd>
+								<p>방문횟수<span>15회</span></p>
+								<p>누적금액<span>7,000원</span></p>
+							</dd>
+						</dl>
+					</div>
+
+					<div class="item">
+						<dl class="company_name">
+							<dt>만랩커리 상암점</dt>
+							<dd>
+								<p>1.5km</p>
+								<p>방문횟수 15회</p>
+								<p>해당품목가격 3,800원</p>
+							</dd>
+						</dl>
+						<dl class="company_time">
+							<dt>요일 / 시간대 분포</dt>
+							<dd>
+								<div class="chart" style="">
+									<canvas id="myChart2"></canvas>
+								</div>
+								<div class="weekTxt">
+									<p class="mon"><span></span>월요일</p>
+									<p class="tue"><span></span>화요일</p>
+									<p class="wed"><span></span>수요일</p>
+									<p class="thu"><span></span>목요일</p>
+									<p class="fri"><span></span>금요일</p>
+									<p class="sat"><span></span>토요일</p>
+									<p class="sun"><span></span>일요일</p>
+								</div>
+							</dd>
+							<dd class="txt">
+								<p>해당 상점은 주로 화요일 오후 6:00 시간대 많이 복잡해요. 해당 시간을 피해서 방문해보세요!  해당 상점은 주로 화요일 오후 6:00 시간대 많이 복잡해요.</p>
+							</dd>
+						</dl>
+						<dl class="company_visit">
+							<dt><span>내소비분석</span></dt>
+							<dd>
+								<p>방문횟수<span>15회</span></p>
+								<p>누적금액<span>7,000원</span></p>
+							</dd>
+						</dl>
+					</div>
+				</div><!-- // place_menu_list -->
+
+			</div><!-- // result_recommend -->
+
+			<div class="btn board"><button type="button" class="more"><span>더보기</span></button></div>
+		
+		</div><!-- // popupContent -->
+
+	</div><!-- // container -->
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+
+<script>
+
+var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'line',
+		data: {
+			labels: ['06~10', '10~14', '14~18', '18~22', '22~02', '02~06'],
+			datasets: [{
+				label: '월',
+				data: [10, 100, 80, 50, 50, 60],
+				backgroundColor: ['rgba(255, 99, 132, 1)'],
+				borderColor: ['rgba(255, 99, 132, 1)'],
+				borderWidth: 1
+			},{
+				label: '화',
+				data: [20, 200, 160, 45, 60, 10],
+				backgroundColor: ['rgba(54, 162, 235, 1)'],
+				borderColor: ['rgba(54, 162, 235, 1)'],
+				borderWidth: 1
+			},{
+				label: '수',
+				data: [30, 300, 240, 40, 10, 20],
+				backgroundColor: ['rgba(255, 206, 86, 1)'],
+				borderColor: ['rgba(255, 206, 86, 1)'],
+				borderWidth: 1
+			},{
+				label: '목',
+				data: [40, 400, 320, 35, 20, 30],
+				backgroundColor: ['rgba(75, 192, 192, 1)'],
+				borderColor: ['rgba(75, 192, 192, 1)'],
+				borderWidth: 1
+			},{
+				label: '금',
+				data: [50, 500, 400, 30, 30, 40],
+				backgroundColor: ['rgba(255, 159, 64, 1)'],
+				borderColor: ['rgba(255, 159, 64, 1)'],
+				borderWidth: 1
+			},{
+				label: '토',
+				data: [60, 600, 480, 20, 40, 50],
+				backgroundColor: ['rgba(185, 255, 64, 1)'],
+				borderColor: ['rgba(185, 255, 64, 1)'],
+				borderWidth: 1
+			},{
+				label: '일',
+				data: [70, 700, 560, 25, 50, 60],
+				backgroundColor: ['rgba(212, 64, 255, 1)'],
+				borderColor: ['rgba(212, 64, 255, 1)'],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			layout: {
+				padding: 0,
+			},
+			plugins: {
+				
+				legend: {
+					display: false,
+					position: 'right',
+				},
+			},
+			scales: {
+				y: {
+					display: false,
+					beginAtZero: true,
+				}
+			}
+		}
+	});
+
+
+
+	var ctx2 = document.getElementById('myChart2').getContext('2d');
+	var myChart2 = new Chart(ctx2, {
+		type: 'line',
+		data: {
+			labels: ['06~10', '10~14', '14~18', '18~22', '22~02', '02~06'],
+			datasets: [{
+				label: '월',
+				data: [10, 100, 80, 50, 50, 60],
+				backgroundColor: ['rgba(255, 99, 132, 1)'],
+				borderColor: ['rgba(255, 99, 132, 1)'],
+				borderWidth: 1
+			},{
+				label: '화',
+				data: [20, 200, 160, 45, 60, 10],
+				backgroundColor: ['rgba(54, 162, 235, 1)'],
+				borderColor: ['rgba(54, 162, 235, 1)'],
+				borderWidth: 1
+			},{
+				label: '수',
+				data: [30, 300, 240, 40, 10, 20],
+				backgroundColor: ['rgba(255, 206, 86, 1)'],
+				borderColor: ['rgba(255, 206, 86, 1)'],
+				borderWidth: 1
+			},{
+				label: '목',
+				data: [40, 400, 320, 35, 20, 30],
+				backgroundColor: ['rgba(75, 192, 192, 1)'],
+				borderColor: ['rgba(75, 192, 192, 1)'],
+				borderWidth: 1
+			},{
+				label: '금',
+				data: [50, 500, 400, 30, 30, 40],
+				backgroundColor: ['rgba(255, 159, 64, 1)'],
+				borderColor: ['rgba(255, 159, 64, 1)'],
+				borderWidth: 1
+			},{
+				label: '토',
+				data: [60, 600, 480, 20, 40, 50],
+				backgroundColor: ['rgba(185, 255, 64, 1)'],
+				borderColor: ['rgba(185, 255, 64, 1)'],
+				borderWidth: 1
+			},{
+				label: '일',
+				data: [70, 700, 560, 25, 50, 60],
+				backgroundColor: ['rgba(212, 64, 255, 1)'],
+				borderColor: ['rgba(212, 64, 255, 1)'],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			layout: {
+				padding: 0,
+			},
+			plugins: {
+				
+				legend: {
+					display: false,
+					position: 'right',
+				},
+			},
+			scales: {
+				y: {
+					display: false,
+					beginAtZero: true,
+				}
+			}
+		}
+	});
+</script>
+
+
+</body>
+</html>

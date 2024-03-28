@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/common/favicon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap viewport">
+	<div class="header">
+		<ul class="gnb">
+			<li><span>홈</span></li>
+			<li class="on"><span>이용내역</span></li>
+			<li><span>이용안내</span></li>
+			<li><span>설정</span></li>
+		</ul>
+	</div><!-- // header -->
+
+	<div class="container_wrap">
+
+		<div class="search_wrap">
+			<form action="">
+				<div class="term">
+					<ul>
+						<li>
+							<input type="radio" name="ra1" id="ra1">
+							<label for="ra1">
+								<span>1주일</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra2">
+							<label for="ra2">
+								<span>1개월</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra3">
+							<label for="ra3">
+								<span>3개월</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra4">
+							<label for="ra4">
+								<span>기간설정</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+
+				<div class="select_group">
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+				</div>
+				<button type="button" class="btn"><span>조회</span></button>
+			</form>
+		</div><!-- // search_wrap -->
+
+
+		<div class="result_wrap">
+			<div class="total_wrap">
+				<div><span>총<strong>32</strong>건</span></div>
+				<div><span><strong>54,860</strong>원</span></div>
+			</div>
+
+			<div class="search_date">
+				<div class="date">2020.06.24 - 2020.06.30</div>
+				<div>
+					<button type="button" class="edit"><span>편집</span></button>
+					<ul style="display:none;">
+						<li><button type="button"><span>목록숨김</span></button></li>
+						<li><button type="button"><span>숨김목록 관리</span></button></li>
+						<!-- <li><a href="#g"><span>목록숨김</span></a></li>
+						<li><a href="#g"><span>숨김목록 관리</span></a></li> -->
+					</ul>
+				</div>
+			</div>
+
+			<div class="result_list">
+				<div class="item">
+					<!-- <div class="chk is_chk">
+						<label><input type="checkbox" id="chk1"><span class="checkmark"></span></label>
+					</div> -->
+					<div class="txt_wrap">
+						<div>
+							<span class="co">공차</span>
+							<span class="pay"><strong>15,900</strong>원</span>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+					<!-- <div class="clear">
+						<button type="button"><span>해제</span></button>
+					</div> -->
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">파리바게트</span>
+							<span class="pay"><strong>9,300</strong>원</span>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">노브랜드 고양행신점</span>
+							<span class="pay"><strong>1,500</strong>원</span>
+						</div>
+						<div>
+							<span class="card">BC카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">스타벅스</span>
+							<del><span class="pay"><strong>4,800</strong>원</span></del>
+						</div>
+						<div>
+							<span class="card">시티카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">파리바게트</span>
+							<span class="pay"><strong>9,300</strong>원</span>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">노브랜드 고양행신점</span>
+							<span class="pay"><strong>1,500</strong>원</span>
+						</div>
+						<div>
+							<span class="card">BC카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="txt_wrap">
+						<div>
+							<span class="co">스타벅스</span>
+							<del><span class="pay"><strong>4,800</strong>원</span></del>
+						</div>
+						<div>
+							<span class="card">시티카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+			</div><!-- // result_list -->
+			
+		</div><!-- // result_wrap -->
+
+	</div><!-- // container_wrap -->
+
+</div><!-- // wrap -->
+
+
+
+<!-- 팝업 -->
+<div class="popup">
+	<div class="pop_header">
+		<h2 class="tit">전자영수증 상세내역 조회</h2>
+		<div><button type="button" class="down"><span>다운로드</span></button><button type="button" class="close"><span>닫기</span></button></div>
+	</div>
+	<div class="pop_cont">
+		<div class="receipt_wrap">
+
+			<div class="receipt_item">
+				<dl>
+					<dt>가맹점명</dt>
+					<dd>공차 고속터미널점</dd>
+				</dl>
+				<dl>
+					<dt>대표자</dt>
+					<dd>김민채</dd>
+				</dl>
+				<dl>
+					<dt>사업자No</dt>
+					<dd>128-87-06507</dd>
+				</dl>
+				<dl>
+					<dt>업종</dt>
+					<dd>음식</dd>
+				</dl>
+				<dl>
+					<dt>전화번호</dt>
+					<dd>02-537-4991</dd>
+				</dl>
+				<dl>
+					<dt>주소</dt>
+					<dd>서울 서초구 신반포로 194 (반포동) 18호</dd>
+				</dl>
+			</div>
+
+			<div class="receipt_table">
+
+				<div class="total">
+					<div>
+						<span class="txt">공급가</span>
+						<span class="money">4,818</span>
+					</div>
+					<div>
+						<span class="txt">부가세</span>
+						<span class="money">482</span>
+					</div>
+					<div>
+						<span class="txt">봉사료</span>
+						<span class="money">0</span>
+					</div>
+				</div>
+
+				<div class="sum">
+					<span>결제금액</span>
+					<span>15,900</span>
+				</div>
+			</div><!-- // receipt_table -->
+
+			<div class="receipt_item">
+				<div class="tit">[신한카드 신용승인]</div>
+				<dl>
+					<dt>승인일시</dt>
+					<dd>2020-07-01 16:05:16</dd>
+				</dl>
+				<dl>
+					<dt>승인번호</dt>
+					<dd>74255341</dd>
+				</dl>
+				<dl>
+					<dt>할부개월</dt>
+					<dd>00</dd>
+				</dl>
+				<dl>
+					<dt>승인금액</dt>
+					<dd>15,900</dd>
+				</dl>
+				<dl>
+					<dt>가맹번호</dt>
+					<dd>70146435</dd>
+				</dl>
+				<dl>
+					<dt>알림</dt>
+					<dd>본 영수증은 종이영수증과동일한 내용입니다.</dd>
+				</dl>
+			</div>
+
+			<div class="map"><img src="../images/temp/sam_map.png" alt="지도" /></div>
+
+		</div><!-- receipt_wrap -->
+
+	</div><!-- // pop_cont -->
+</div><!-- // popup -->
+
+
+<!-- <script src="../js/temp.js"></script> -->
+
+<script>
+$(document).ready(function(){
+/* 테스트용 임시 스크립트 */
+
+/* 검색 기간 */
+$(".term li").on("click", function(){
+	$(this).siblings().removeClass("on");
+	$(this).addClass("on");
+})
+
+
+})
+</script>
+
+</body>
+</html>
+

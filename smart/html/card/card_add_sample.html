@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">카드정보 입력</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+		<div class="card_add_wrap">
+			<div class="card_img"><img src="../../images/card_img/card_img_sample.png" alt="샘플카드" /></div>
+
+			<div class="card_number_wrap">
+				<div class="tit">카드번호</div>
+				<div class="number_input_wrap">
+					<div><input type="tel" placeholder="1234-1234-1234-1234" maxlength="19"></div>
+				</div>
+				<!-- <div class="txt_error">올바른 카드 번호가 아닙니다.</div> -->
+			</div>
+
+		</div><!-- // card_add_wrap -->
+			
+	</div><!-- // container -->
+
+	<div class="f_btn_group">
+		<div class="btn_group">
+			<div><button type="button" class="next"><span>카드 등록</span></button></div>
+		</div>
+	</div>
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	/* 테스트 스크립트 */
+	function setMdnEventCss() {
+		$(".number_input_wrap input").keydown(function(e) {
+			var key = e.charCode || e.keyCode || 0;
+			$text = $(this);
+			if (key !== 8 && key !== 9) {
+				if ($text.val().length === 4) {
+					$text.val($text.val() + '-');
+				}
+				if ($text.val().length === 9) {
+					$text.val($text.val() + '-');
+				}
+				if ($text.val().length === 14) {
+					$text.val($text.val() + '-');
+				}
+			}
+			return (key == 8 || key == 9 || key == 46 || key == 116 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+		});
+	}
+	setMdnEventCss();
+
+})
+</script>
+
+
+
+</body>
+</html>

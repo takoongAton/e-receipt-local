@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">내 근처 카페/간식 가격 정보</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header>
+
+	<div class="container">
+
+		<div class="search_wrap">
+
+			<div class="tab_wrap">
+				<ul>
+					<li class="on">
+						<a href="#g"><span>추천상점</span></a>
+					</li>
+					<li>
+						<a href="#g"><span>선호품목</span></a>
+					</li>
+					<li>
+						<a href="#g"><span>쿠폰혜택</span></a>
+					</li>
+					<li>
+						<a href="#g"><span>스템프</span></a>
+					</li>
+				</ul>
+			</div>
+			
+		</div><!-- // search_wrap -->
+
+		<div class="chk_wrap chk_type1">
+			<div class="chk">
+				<label>
+					<input type="radio" name="ra02">
+					<span class="checkmark"></span><span class="chktxt">전체</span>
+				</label>
+			</div>
+			<div class="chk">
+				<label>
+					<input type="radio" name="ra02">
+					<span class="checkmark"></span><span class="chktxt">미사용</span>
+				</label>
+			</div>
+			<div class="chk">
+				<label>
+					<input type="radio" name="ra02">
+					<span class="checkmark"></span><span class="chktxt">사용/기간만료</span>
+				</label>
+			</div>
+		</div>
+
+
+		<div class="list_coupon">
+			<div class="list_title"><p>총 <span>3</span>건</p></div>
+			<div class="list">
+				<div class="item">
+					<dl>
+						<dt>달달커피</dt>
+						<dd class="txt">아메리카노 20% 할인</dd>
+						<dd class="date">2021.06.30 까지</dd>
+					</dl>
+					<div>
+						<label class="like">
+							<input type="checkbox">
+							<span class="checkmark">좋아요</span>
+						</label>
+						<p>미사용</p>
+					</div>
+				</div>
+				<div class="item">
+					<dl>
+						<dt>여기커피 응암점</dt>
+						<dd class="txt">아메리카노 20% 할인</dd>
+						<dd class="date">2021.06.30 까지</dd>
+					</dl>
+					<div>
+						<label class="like">
+							<input type="checkbox">
+							<span class="checkmark">좋아요</span>
+						</label>
+						<p class="disabled">기간만료</p>
+					</div>
+				</div>
+				<div class="item">
+					<dl>
+						<dt>굽자삼겹살</dt>
+						<dd class="txt">아메리카노 20% 할인</dd>
+						<dd class="date">2021.06.30 까지</dd>
+					</dl>
+					<div>
+						<label class="like">
+							<input type="checkbox">
+							<span class="checkmark">좋아요</span>
+						</label>
+						<p class="disabled">사용만료</p>
+					</div>
+				</div>
+				<div class="item">
+					<dl>
+						<dt>울라라세션</dt>
+						<dd class="txt">아메리카노 20% 할인</dd>
+						<dd class="date">2021.06.30 까지</dd>
+					</dl>
+					<div>
+						<label class="like">
+							<input type="checkbox">
+							<span class="checkmark">좋아요</span>
+						</label>
+						<p class="disabled">기간만료</p>
+					</div>
+				</div>
+			</div>
+		</div><!-- // list_coupon -->
+		<!-- <div class="btn board"><button type="button" class="more"><span>더보기</span></button></div> -->
+
+	</div><!-- // container -->
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+
+</body>
+</html>

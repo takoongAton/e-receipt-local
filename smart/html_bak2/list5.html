@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/common/favicon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap viewport">
+	<div class="header">
+		<ul class="gnb">
+			<li><span>홈</span></li>
+			<li class="on"><span>이용내역</span></li>
+			<li><span>이용안내</span></li>
+			<li><span>설정</span></li>
+		</ul>
+	</div><!-- // header -->
+
+	<div class="container_wrap">
+
+		<div class="search_wrap">
+			<form action="">
+				<div class="term">
+					<ul>
+						<li>
+							<input type="radio" name="ra1" id="ra1">
+							<label for="ra1">
+								<span>1주일</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra2">
+							<label for="ra2">
+								<span>1개월</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra3">
+							<label for="ra3">
+								<span>3개월</span>
+							</label>
+						</li>
+						<li>
+							<input type="radio" name="ra1" id="ra4">
+							<label for="ra4">
+								<span>기간설정</span>
+							</label>
+						</li>
+					</ul>
+				</div>
+
+				<div class="select_group">
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+					<div>
+						<select name="" id="">
+							<option value="">카드선택(전체)</option>
+							<option value="">카드_A</option>
+							<option value="">카드_B</option>
+							<option value="">카드_C</option>
+						</select>
+					</div>
+				</div>
+				<button type="button" class="btn"><span>조회</span></button>
+			</form>
+		</div><!-- // search_wrap -->
+
+
+		<div class="result_wrap">
+			<div class="total_wrap">
+				<div><span>총<strong>32</strong>건</span></div>
+				<div><span><strong>54,860</strong>원</span></div>
+			</div>
+
+			<div class="search_date">
+				<div class="date">2020.06.24 - 2020.06.30</div>
+				<div>
+					<button type="button" class="edit"><span>편집</span></button>
+					<ul style="display:none;">
+						<li><button type="button"><span>목록숨김</span></button></li>
+						<li><button type="button"><span>숨김목록 관리</span></button></li>
+						<!-- <li><a href="#g"><span>목록숨김</span></a></li>
+						<li><a href="#g"><span>숨김목록 관리</span></a></li> -->
+					</ul>
+				</div>
+			</div>
+
+			<div class="result_list">
+				<div class="item">
+					<div class="chk is_chk">
+						<label><input type="checkbox" id="chk1"><span class="checkmark"></span></label>
+					</div>
+					<div class="txt_wrap">
+						<div>
+							<span class="co">공차</span>
+							<span class="pay"><strong>15,900</strong>원</span>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+					<!-- <div class="clear">
+						<button type="button"><span>해제</span></button>
+					</div> -->
+				</div>
+
+				<div class="item">
+					<div class="chk is_chk">
+						<label><input type="checkbox" id="chk1"><span class="checkmark"></span></label>
+					</div>
+					<div class="txt_wrap">
+						<div>
+							<span class="co">파리바게트</span>
+							<span class="pay"><strong>9,300</strong>원</span>
+						</div>
+						<div>
+							<span class="card">국민카드</span>
+							<span class="time">2020.06.30 09:31</span>
+						</div>
+					</div>
+				</div>
+
+			</div><!-- // result_list -->
+			
+		</div><!-- // result_wrap -->
+
+	</div><!-- // container_wrap -->
+
+</div><!-- // wrap -->
+
+
+<div class="footer_layer" id="test1" style="display:block;">
+	<div class="btn_group">
+		<div><button type="button" class="next"><span>숨김</span></button></div>
+		<div><button type="button" class="cancel"><span>취소</span></button></div>
+	</div>
+</div><!-- // footer_layer -->
+
+
+<!-- <script src="../js/temp.js"></script> -->
+
+<script>
+$(document).ready(function(){
+/* 테스트용 임시 스크립트 */
+
+/* 검색 기간 */
+$(".term li").on("click", function(){
+	$(this).siblings().removeClass("on");
+	$(this).addClass("on");
+})
+
+
+})
+</script>
+
+</body>
+</html>
+

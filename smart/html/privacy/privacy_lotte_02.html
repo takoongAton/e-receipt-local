@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>전자영수증</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+	
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">휴대폰 메시지 수신 방법 변경 동의(필수)</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+
+		<div class="privacy_wrap">
+
+			<p>휴대폰메시지 표준약관(제6조)에 관련하여 신용카드사는 이용자가 선택한 휴대폰메시지 수신 방법을 변경할 경우 이용자 본인의 사전 동의를 받아야 합니다. 이에 본인은 신용카드사 앞 휴대폰메시지 수신 방법과 알림 내용의 일부 또는 전부를 모바일 메시지 이용 알림 서비스로 변경하는 것에 동의합니다.</p>
+			<br />
+
+			<p>모바일 이용 알림 제공 항목<br />
+				- 국내 승인/ 승인 취소/ 거절<br />
+				- 해외 승인/ 승인 취소/ 거절<br />
+				- 기타 정보성 메시지
+			</p>
+			<br />
+
+			<p>※ 상기 모바일 이용 알림 내역은 휴대폰메시지 표준약관에 따라 제공되는 항목으로 향후 추가될 수 있으며, 일부 항목에 대해서는 기존과 같이 SMS(문자 알림)로 발송됩니다.</p>
+			<br />
+
+			<p>카드사에 따라 제공 항목에 차이가 있을 수 있으며, 카드사별 항목은 아래와 같습니다.<br />
+				롯데카드가 제공하는 모바일 이용 알림 제공 항목<br />
+				(이용 알림 유료 고객)<br />
+				- 국내 신용 일시불/ 할부 승인, 국내 체크카드 승인, 체크카드 하이브리드 승인, 잔액 부족 신용결제 승인, SAVE 승인<br />
+				- 국내 신용 일시불/ 할부 취소, 국내 체크카드 취소
+			</p>
+			<br />
+
+			<p>※ 상기 모바일 이용 알림 내역은 휴대폰 메시지 표준 약관에 따라 제공되는 항목으로 향후 추가될 수 있으며, 일부 항목에 대해서는 기존과 같이 SMS(문자 알림)로 발송됩니다.</p>
+			<br />
+
+			<p>※ 이동통신망으로 수신 시 데이터 요금이 발생할 수 있습니다.</p>
+
+		</div>
+
+	</div><!-- // container -->
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+})
+</script>
+
+</body>
+</html>

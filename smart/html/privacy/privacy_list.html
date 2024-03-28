@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+	
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">이용약관 및 정책</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+
+		<div class="privacy_list">
+			<div><a href="#g">서비승 이용약관 동의(필수)</a></div>
+			<div><a href="#g">개인정보 수집 및 이용동의(필수)</a></div>
+			<div><a href="#g">개인정보 제3자 제공동의(필수)</a></div>
+			<div><a href="#g">개인정보 처리방침</a></div>
+		</div>
+
+	</div><!-- // container -->
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+})
+</script>
+
+</body>
+</html>
