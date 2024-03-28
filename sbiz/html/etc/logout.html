@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+
+
+	<div class="container">
+		<div class="error_wrap">
+			<div class="error">
+				<div class="tit">서비스 이용에<br />불편을 드려 죄송합니다.</div>
+				<p class="txt">세션이 만료되었습니다.<br />다시 로그인해 주세요.</p>
+			</div>
+		</div><!-- // general_wrap -->
+	</div><!-- // container -->
+
+	<div class="f_btn_group">
+		<div class="btn_group">
+			<div><button type="button" class="next"><span>로그인</span></button></div>
+		</div>
+	</div>
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+})
+</script>
+
+</body>
+</html>

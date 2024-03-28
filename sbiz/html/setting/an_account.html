@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">전자영수증 서비스 해지</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+		<div class="an_account_wrap">
+			<p>PASS 전자영수증 서비스를 해지 하시면 더 이상 영수증 조회가 불가능합니다.<br /><br />
+			또한 발급된 전자영수증 등 데이터는 모두 삭제되어 복구가 불가능하오니 이점 유의해 주시기 바랍니다.</p>
+		</div>
+	</div><!-- // container -->
+
+	<div class="pop_footer">
+		<div class="btn_group">
+			<div><button type="button" class="cancel"><span>취소</span></button></div>
+			<div><button type="button" class="next"><span>서비스 해지</span></button></div>
+		</div>
+	</div>
+
+</div><!-- // wrap -->
+
+
+<div class="dim" style="display:none;"></div>
+
+
+<div class="modal_alert" style="display:none;">
+	<p class="txt">전자영수증 서비스를<br />해지하시겠습니까?</p>
+	<div class="btn_group">
+		<div><button type="button" class="cancel"><span>아니오</span></button></div>
+		<div><button type="button" class="next"><span>예</span></button></div>
+	</div>
+</div><!-- // modal_alert -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+	$(".next").on("click", function(){
+		$(".dim").show();
+		$(".modal_alert").show();
+	})
+	
+	$(".modal_alert button").on("click", function(){
+		$(".dim").hide();
+		$(this).parents(".modal_alert").hide();
+	})
+
+	$(".pop_footer .cancel").on("click", function(){
+		$(this).parents(".popup").slideUp(200);
+	})
+
+})
+</script>
+
+</body>
+</html>

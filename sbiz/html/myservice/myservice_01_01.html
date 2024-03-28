@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+	<!-- <script src="../../js/chart.min.js"></script> -->
+	
+	<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="gnb_wrap">
+			<ul class="gnb">
+				<li><span>홈</span></li>
+				<li class="on"><span>내상점분석</span></li>
+				<li><span>내동의현황</span></li>
+				<li><span>설정</span></li>
+			</ul>
+			<div class="tools">
+				<button type="button" class="mypage"><span>메뉴</span></button>
+			</div>
+		</div><!-- // gnb_wrap -->
+	</header><!-- // header -->
+
+
+	<div class="container">
+
+		<div class="search_wrap">
+
+			<div class="tab_wrap">
+				<ul>
+					<li class="on">
+						<a href="#g"><span>상권분석</span></a>
+					</li>
+					<li>
+						<a href="#g"><span>가격정보</span></a>
+					</li>
+					<li>
+						<a href="#g"><span>쿠폰관리</span></a>
+					</li>
+					<!-- <li>
+						<a href="#g"><span>스템프</span></a>
+					</li> -->
+				</ul>
+			</div>
+			
+		</div><!-- // search_wrap -->
+
+
+		<div class="search_month">
+			<button type="button" class="prev"><span>이전달</span></button>
+			<p>6월</p>
+			<button type="button" class="next"><span>다음달</span></button>
+		</div>
+
+		<div class="chk_wrap chk_type1">
+			<div class="chk">
+				<label>
+					<input type="radio" name="ra01" checked>
+					<span class="checkmark"></span><span class="chktxt">나의 상점정보</span>
+				</label>
+			</div>
+			<div class="chk">
+				<label>
+					<input type="radio" name="ra01">
+					<span class="checkmark"></span><span class="chktxt">지역별 상점정보</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="myservice_con sales_info">
+			<div class="title">
+				<strong>매출정보</strong>
+				<div class="tooltip"><a href="#test1111" class="help"><span>도움말</span></a></div>
+			</div>
+			<div class="table">
+				<dl>
+					<dt><strong>월 평균 매출</strong></dt>
+					<dd><strong>5,520,000</strong><span>원</span></dd>
+				</dl>
+				<dl>
+					<dt><strong>년 매출</strong></dt>
+					<dd><strong>10,000,000</strong><span>원</span></dd>
+				</dl>
+			</div>
+		</div>
+
+
+
+		<!-- <div class="myservice_con">
+			<div class="title">
+				<strong>일별 매출 추이</strong>
+				<div class="tooltip"><a href="#test1111" class="help"><span>도움말</span></a></div>
+			</div>
+			<div class="graph_wrap">
+				<canvas id="myChart1"></canvas>
+			</div>
+		</div> -->
+
+
+
+		<div class="myservice_con">
+			<div class="title">
+				<strong>요일/시간대 유동인구 분포</strong>
+			</div>
+			<div class="graph_wrap">
+				<canvas id="myChart2"></canvas>
+			</div>
+		</div>
+
+		<div class="myservice_con">
+			<div class="title">
+				<strong>주요 판매 품목</strong>
+			</div>
+			<div class="graph_wrap">
+				<canvas id="myChart3"></canvas>
+			</div>
+		</div>
+
+		
+
+		<div class="btn board"><button type="button"><span>자세히 보기</span></button></div>
+
+
+		<div class="list_new">
+			<!-- <div class="list_tit"><strong>소비품목상세</strong></div> -->
+
+			<ul class="list">
+				<li class="item">
+					<dl class="type1">
+						<dt class="txt"><span>아이스 아이스 아이스 아메리카노</span></dt>
+						<dd class="count"><span>20회</span></dd>
+						<dd class="pay"><strong>555,155,900원</strong></dd>
+					</dl>
+				</li>
+				<li class="item">
+					<dl class="type1">
+						<dt class="txt"><span>베이글</span></dt>
+						<dd class="count"><span>15회</span></dd>
+						<dd class="pay"><strong>100,900원</strong></dd>
+					</dl>
+				</li>
+				<li class="item">
+					<dl class="type1">
+						<dt class="txt"><span>아메리카노</span></dt>
+						<dd class="count"><span>10회</span></dd>
+						<dd class="pay"><strong>100,500원</strong></dd>
+					</dl>
+				</li>
+				<li class="item">
+					<dl class="type1">
+						<dt class="txt"><span>마라탕</span></dt>
+						<dd class="count"><span>8회</span></dd>
+						<dd class="pay"><strong>50,000원</strong></dd>
+					</dl>
+				</li>
+				<li class="item">
+					<dl class="type1">
+						<dt class="txt"><span>기타</span></dt>
+						<dd class="count"><span>5회</span></dd>
+						<dd class="pay"><strong>15,000원</strong></dd>
+					</dl>
+				</li>
+				<li class="item">
+					<dl>
+						<dt class="txt">기타</dt>
+						<dd class="count">5회</dd>
+						<dd class="pay">15,000원</dd>
+					</dl>
+				</li>
+			</ul>
+
+			<!-- <div class="btn"><button type="button" class="more"><span>더보기</span></button></div> -->
+		</div>
+
+	</div><!-- // container -->
+
+
+</div><!-- // wrap -->
+
+<div class="dim" style="display:none;"></div>
+<div class="footer_layer" id="hide_wrap" style="display:none;">
+	<div class="setDate_wrap">
+		<div class="title">기간설정</div>
+		<form action="">
+			<div class="set_input">
+				<div><input type="date" value="2018-07-22"></div>
+				<span>-</span>
+				<div><input type="date" value="2018-07-22"></div>
+			</div>
+			<button type="button" class="submit"><span>조회</span></button>
+			<button type="button" class="close"><img src="../../images/common/btn_close.png" alt="닫기" /></button>
+		</form>
+	</div>
+</div>
+
+
+<div class="footer_layer" id="hide_btn" style="display:none;">
+	<div class="btn_group">
+		<div><button type="button" class="cancel"><span>취소</span></button></div>
+		<div><button type="button" class="next"><span>숨김</span></button></div>
+	</div>
+</div>
+
+
+
+<!-- 도움말 팝업 -->
+<div class="layer help" id="test1111">
+	<div class="layer_dim"></div>
+	<div class="layer_inner">
+		<p class="txt">
+			매출정보는 가맹점 추가 정보입력 기준으로
+			제공되며,입력 정보가 없으면 제공되지 않습니다.<br />
+			매출정보 입력/수정은 MyPage> 매출정보에서 가능합니다.
+		</p>
+		<div class="close"><button type="button"><span>닫기</span></button></div>
+	</div>
+</div><!-- // layer help -->
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	/* 테스트용 임시 스크립트 */
+	/* 검색 기간 */
+	$(".term li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+	})
+
+	$(".chk.is_chk").show();
+
+
+	// containerPadding();
+
+	/*
+	$(".xxx").on("click",function(){
+		$(".page_popup").show();
+	})
+	*/
+
+	
+	
+
+
+	/*
+	// 일별 매출추이
+	var ctx1 = document.getElementById('myChart1').getContext('2d');
+	var myChart1 = new Chart(ctx1, {
+		type: 'line',
+		data: {
+			labels: ['21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11', '21-06-11'],
+			datasets: [{
+				label: '월',
+				data: [10, 100, 80, 50, 50, 60, 10, 100, 80, 50, 50, 60],
+				backgroundColor: ['rgba(255, 99, 132, 1)'],
+				borderColor: ['rgba(255, 99, 132, 1)'],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			layout: {
+				padding: 0,
+			},
+			plugins: {
+				
+				legend: {
+					display: false,
+					position: 'right',
+				},
+			},
+			scales: {
+				y: {
+					display: false,
+					beginAtZero: true,
+				}
+			}
+		}
+	});
+	*/
+	
+	
+	var ctx2 = document.getElementById('myChart2').getContext('2d');
+	var myChart2 = new Chart(ctx2, {
+		type: 'line',
+		data: {
+			labels: ['06~10', '10~14', '14~18', '18~22', '22~02', '02~06'],
+			datasets: [{
+				label: '월',
+				data: [10, 100, 80, 50, 50, 60],
+				backgroundColor: ['rgba(255, 99, 132, 1)'],
+				borderColor: ['rgba(255, 99, 132, 1)'],
+				borderWidth: 1
+			},{
+				label: '화',
+				data: [20, 200, 160, 45, 60, 10],
+				backgroundColor: ['rgba(54, 162, 235, 1)'],
+				borderColor: ['rgba(54, 162, 235, 1)'],
+				borderWidth: 1
+			},{
+				label: '수',
+				data: [30, 300, 240, 40, 10, 20],
+				backgroundColor: ['rgba(255, 206, 86, 1)'],
+				borderColor: ['rgba(255, 206, 86, 1)'],
+				borderWidth: 1
+			},{
+				label: '목',
+				data: [40, 400, 320, 35, 20, 30],
+				backgroundColor: ['rgba(75, 192, 192, 1)'],
+				borderColor: ['rgba(75, 192, 192, 1)'],
+				borderWidth: 1
+			},{
+				label: '금',
+				data: [50, 500, 400, 30, 30, 40],
+				backgroundColor: ['rgba(255, 159, 64, 1)'],
+				borderColor: ['rgba(255, 159, 64, 1)'],
+				borderWidth: 1
+			},{
+				label: '토',
+				data: [60, 600, 480, 20, 40, 50],
+				backgroundColor: ['rgba(185, 255, 64, 1)'],
+				borderColor: ['rgba(185, 255, 64, 1)'],
+				borderWidth: 1
+			},{
+				label: '일',
+				data: [70, 700, 560, 25, 50, 60],
+				backgroundColor: ['rgba(212, 64, 255, 1)'],
+				borderColor: ['rgba(212, 64, 255, 1)'],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			layout: {
+				padding: 0,
+			},
+			plugins: {
+				
+				legend: {
+					display: false,
+					position: 'right',
+				},
+			},
+			scales: {
+				y: {
+					display: false,
+					beginAtZero: true,
+				}
+			}
+		}
+	});
+
+
+	var ctx3 = document.getElementById('myChart3').getContext('2d');
+	var myChart3 = new Chart(ctx3, {
+		type: 'doughnut',
+		data: {
+			labels: ['카페라떼', '베이글', '아메리카노', '마라탕', '샌드위치'],
+			datasets: [{
+				data: [5, 10, 15, 30, 40],
+				backgroundColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(255, 159, 64, 1)'
+				],
+				borderColor: [
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)'
+				],
+				borderWidth: 2
+			}]
+		},
+		options: {
+			layout: {
+				padding: 0
+			},	
+			responsive: false,
+			plugins: {
+				legend: {
+					position: 'right',
+				},
+			}
+		},
+		
+	});
+
+})
+</script>
+
+</body>
+</html>

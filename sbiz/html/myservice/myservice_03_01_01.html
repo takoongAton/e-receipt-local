@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+	<!-- <script src="../../js/chart.min.js"></script> -->
+	
+	<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js" integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="gnb_wrap">
+			<ul class="gnb">
+				<li><span>홈</span></li>
+				<li class="on"><span>내상점분석</span></li>
+				<li><span>내동의현황</span></li>
+				<li><span>설정</span></li>
+			</ul>
+			<div class="tools">
+				<button type="button" class="mypage"><span>메뉴</span></button>
+			</div>
+		</div><!-- // gnb_wrap -->
+	</header><!-- // header -->
+
+
+	<div class="container">
+
+		<div class="search_wrap">
+
+			<div class="tab_wrap">
+				<ul>
+					<li>
+						<a href="#g"><span>상권분석</span></a>
+					</li>
+					<li>
+						<a href="#g"><span>가격정보</span></a>
+					</li>
+					<li class="on">
+						<a href="#g"><span>쿠폰관리</span></a>
+					</li>
+					<!-- <li>
+						<a href="#g"><span>스템프</span></a>
+					</li> -->
+				</ul>
+			</div>
+			
+		</div><!-- // search_wrap -->
+
+
+		<div class="chk_wrap chk_type1">
+			<div class="chk">
+				<label>
+					<input type="radio" name="ra01">
+					<span class="checkmark"></span><span class="chktxt">쿠폰리스트</span>
+				</label>
+			</div>
+			<div class="chk">
+				<label>
+					<input type="radio" name="ra01" checked>
+					<span class="checkmark"></span><span class="chktxt">쿠폰생성</span>
+				</label>
+			</div>
+		</div>
+
+		<div class="tab_depth3_wrap">
+			<ul class="tab_depth3">
+				<li class="on"><a href="#g"><span>타 상점 연계쿠폰</span></a></li>
+				<li><a href="#g"><span>재방문 쿠폰</span></a></li>
+			</ul>
+		</div>
+
+
+		<div class="coupon_set_wrap">
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>쿠폰명</dt>
+					<dd>
+						<div class="set_input">
+							<input type="text" class="text" disabled placeholder="쿠폰명은 2자 이상 20자 이내로 등록해주세요." value="아이스아메리카노 20% 할인쿠폰">
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>발송 조건 설정</dt>
+					<dd>
+						<div class="tit">연령대</div>
+						<div class="select_type1">
+							<div class="chk">
+								<label>
+									<input type="checkbox" name="coupon01">
+									<span class="chktxt">10</span>
+								</label>
+							</div>
+							<div class="chk">
+								<label>
+									<input type="checkbox" name="coupon01">
+									<span class="chktxt">20</span>
+								</label>
+							</div>
+							<div class="chk">
+								<label>
+									<input type="checkbox" name="coupon01">
+									<span class="chktxt">30</span>
+								</label>
+							</div>
+							<div class="chk">
+								<label>
+									<input type="checkbox" name="coupon01">
+									<span class="chktxt">40</span>
+								</label>
+							</div>
+						</div>
+					</dd>
+					<dd>
+						<div class="tit">인근매장연동</div>
+						<div class="select_type1">
+							<div class="chk">
+								<label>
+									<input type="radio" name="coupon02">
+									<span class="chktxt">1km</span>
+								</label>
+							</div>
+							<div class="chk">
+								<label>
+									<input type="radio" name="coupon02">
+									<span class="chktxt">500m</span>
+								</label>
+							</div>
+							<div class="chk">
+								<label>
+									<input type="radio" name="coupon02">
+									<span class="chktxt">300m</span>
+								</label>
+							</div>
+						</div>
+					</dd>
+
+					<dd>
+						<div class="tit">발송시간대</div>
+						<div class="select_period_type1">
+							<div class="set_input">
+								<input type="time" class="text" required />
+							</div>
+							<span class="hyphen">-</span>
+							<div class="set_input">
+								<input type="time" class="text" required />
+							</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>유효기간 설정</dt>
+					<dd>
+						<div class="tit">유효기간</div>
+						<div class="select_period_type1">
+							<div class="set_input">
+								<input type="number" class="text" placeholder="수령일" disabled>
+							</div>
+							<span class="hyphen">-</span>
+							<div class="set_input">
+								<input type="number" class="text" placeholder="365이내 입력" >
+								<span class="placeholder">일</span>
+							</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>발송 건수 설정</dt>
+					<dd>
+						<div class="tit">하루 최대발송 수</div>
+						<div class="set_input">
+							<input type="text" class="text" placeholder="100개 이내 입력">
+						</div>
+					</dd>
+					<dd>
+						<div class="tit">전체 쿠폰 수</div>
+						<div class="set_input">
+							<input type="text" class="text" placeholder="5,000개 이내 입력">
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>쿠폰 배경화면</dt>
+					<dd>
+						<div class="set_color_wrap">
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/4E6BDE" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark pouple"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/7833DC" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/FF9900" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/4E6BDE" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark pouple"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/7833DC" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/FF9900" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/4E6BDE" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark pouple"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/7833DC" alt="쿠폰이름"></span>
+							</label>
+							<label class="set_color">
+								<input type="radio" class="radio" name="color01">
+								<span class="checkmark"></span>
+								<span class="txt"><img src="https://via.placeholder.com/640x288/FF9900" alt="쿠폰이름"></span>
+							</label>
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>할인조건</dt>
+					<dd>
+						<div class="tit">할인율</div>
+						<div class="set_input">
+							<input type="text" class="text" placeholder="100% 이내 입력">
+						</div>
+					</dd>
+					<dd>
+						<div class="tit">대상상품</div>
+						<div class="set_input">
+							<input type="text" class="text" placeholder="2자 이상 15자 이내 입력">
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>메시지</dt>
+					<dd>
+						<div class="set_input">
+							<input type="text" class="text" placeholder="메시지는 2자 이상 20자 이내로 등록해주세요">
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="input_form_wrap">
+				<dl>
+					<dt>쿠폰 사용 암호 (4자리 숫자)</dt>
+					<dd>
+						<div class="set_input">
+							<input type="text" class="text tac" maxlength="4">
+							<!-- <input type="text" class="text tac" maxlength="1">
+							<input type="text" class="text tac" maxlength="1">
+							<input type="text" class="text tac" maxlength="1"> -->
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+		</div><!-- // coupon_set_wrap -->
+
+		<!-- <div class="btn board"><button type="button" class="btn gray"><span>목록</span></button></div> -->
+
+	</div><!-- // container -->
+
+</div><!-- // wrap -->
+
+<div class="footer_layer">
+	<div class="btn_group">
+		<div><button type="button" class="next"><span>쿠폰 수정</span></button></div>
+		<div><button type="button" class="list"><span>목록</span></button></div>
+	</div>
+</div>
+
+<div class="dim" style="display:none;"></div>
+<div class="footer_layer" id="hide_wrap" style="display:none;">
+	<div class="setDate_wrap">
+		<div class="title">기간설정</div>
+		<form action="">
+			<div class="set_input">
+				<div><input type="date" value="2018-07-22"></div>
+				<span>-</span>
+				<div><input type="date" value="2018-07-22"></div>
+			</div>
+			<button type="button" class="submit"><span>조회</span></button>
+			<button type="button" class="close"><img src="../../images/common/btn_close.png" alt="닫기" /></button>
+		</form>
+	</div>
+</div>
+
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	/* 테스트용 임시 스크립트 */
+	/* 검색 기간 */
+	$(".term li").on("click", function(){
+		$(this).siblings().removeClass("on");
+		$(this).addClass("on");
+	})
+
+	$(".chk.is_chk").show();
+
+
+	// containerPadding();
+
+	/*
+	$(".xxx").on("click",function(){
+		$(".page_popup").show();
+	})
+	*/
+
+	
+	/*
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: 'doughnut',
+		data: {
+			labels: ['카페라떼', '베이글', '아메리카노', '마라탕', '샌드위치'],
+			datasets: [{
+				data: [5, 10, 15, 30, 40],
+				backgroundColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(255, 159, 64, 1)'
+				],
+				borderColor: [
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)',
+					'rgba(255, 255, 255, 1)'
+				],
+				borderWidth: 2
+			}]
+		},
+		options: {
+			layout: {
+				padding: 0
+			},	
+			responsive: false,
+			plugins: {
+				legend: {
+					position: 'right',
+				},
+			}
+		},
+		
+	});
+	*/
+
+})
+</script>
+
+</body>
+</html>

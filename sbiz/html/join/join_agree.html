@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">서비스 가입 <span class="bul"></span> 약관동의</h2>
+			<div><button type="button" class="close"><span>닫기</span></button></div>
+		</div>
+	</header>
+
+	<div class="demo_container">
+		
+		<div class="demo_agree_wrap">
+			<p class="txt">소상공인 서비스 이용을 위해 약관에 동의해주세요.</p>
+			<div class="agree_wrap">
+				<div class="is_chk_all"><input type="checkbox" id="chk0"><label for="chk0">약관에 전체동의합니다.</label></div>
+				<div class="is_chk">
+					<div><input type="checkbox" id="chk1"><label for="chk1">서비스 이용 약관(필수)</label><span>보기</span></div>
+					<ul>
+						<li>회사가 제공하는 <span>서비스 정의</span></li>
+						<li>회사와 회원의 <span>의무사항과 주의사항</span></li>
+					</ul>
+				</div>
+				<div class="is_chk">
+					<div><input type="checkbox" id="chk2"><label for="chk2">개인정보 수집 및 이용 동의 (필수)</label><span>보기</span></div>
+					<ul>
+						<li>회원 가입 및 관리를 위한 정보 수집</li>
+						<li>수집하는 정보의 <span>종류 및 제공처</span> 안내</li>
+						<li>수집한 정보의 <span>보유, 이용기간</span> 안내</li>
+					</ul>
+				</div>
+				<div class="is_chk">
+					<div><input type="checkbox" id="chk3"><label for="chk3">개인정보 수집 및 이용 동의(선택)</label><span>보기</span></div>
+					<ul>
+						<li>수집하는 <span>정보의 종류 및 이용 목적</span> 안내</li>
+						<li>수집한 정보의 <span>보유, 이용기간</span> 안내</li>
+					</ul>
+				</div>
+				<!-- <div class="is_chk">
+					<div><input type="checkbox" id="chk4"><label for="chk4">비씨카드를 통한 개인정보 등 수집동의 (선택)</label><span>보기</span></div>
+					<ul>
+						<li>My소비 제공을 위한 <span>정보 수집</span></li>
+						<li>수집하는 정보의 <span>종류 및 제공처</span> 안내</li>
+						<li>수집한 정보의 <span>보유, 이용기간</span> 안내</li>
+					</ul>
+				</div> -->
+				<div class="is_chk">
+					<div><input type="checkbox" id="chk5"><label for="chk5">혜택 알림을 위한 개인정보 수집·이용 및 정보 수신 동의(선택)</label><span>보기</span></div>
+					<ul>
+						<li>유익한 서비스나 제휴 혜택, 마케팅 <span>등을 휴대전화(앱 알림 또는 문자), 이메일 등</span>을 통해 받아볼 수 있음</li>
+					</ul>
+				</div>
+			</div>
+		</div><!-- // demo_agree_wrap -->
+
+	</div><!-- // demo_container -->
+
+	<div class="f_btn_group">
+		<div class="btn_group">
+			<div><button type="button" class="next"><span>다음</span></button></div>
+		</div>
+	</div>
+
+
+	<!-- <div class="footer">
+		<h2 class="logo"><span><img src="../../images/common/logo_aton.png" alt="ATON" /></span></h2>
+		<ul>
+			<li><a href="#g">서비스 이용약관</a></li>
+			<li><a href="#g">개인정보 취급방침</a></li>
+		</ul>
+	</div> --><!-- // footer -->
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	$('.is_chk_all input').on('click',function(){
+		/*var chkAll = $(this).is(":checked");*/
+		var chkAll = $(this).prop('checked');
+
+		if(chkAll){
+			$('.is_chk input').prop('checked', true);
+		}else{
+			$('.is_chk input').prop('checked', false);
+		}
+	})
+
+	var chkNum = $('.is_chk').length;
+
+	$('.is_chk input').on('click',function(){
+		var chkAtiveNum = $('.is_chk input:checked').length;
+
+		if(chkNum == chkAtiveNum){
+			$('.is_chk_all input').prop('checked', true);
+		}else{
+			$('.is_chk_all input').prop('checked', false);
+		}
+	})
+
+})
+</script>
+
+</body>
+</html>

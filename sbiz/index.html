@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="shortcut icon" type="image/x-icon" href="./kt/images/common/favicon.ico">
+<title>전자영수증</title>
+<style type="text/css">
+body {margin:0; padding:30px 20px 20px 20px; font-family:Tahoma, Sans-Serif; font-size:12px; color:#333; line-height:1;}
+h1, p, ul, th, td {margin:0; padding:0;}
+ul, li {list-style-type:none;}
+
+h1 {margin:0 0 10px 0; font-size:17px;}
+h1 > span {margin-left:10px; font-size:13px; font-weight:normal;}
+.quick *{float:left; vertical-align:middle;}
+.quick {position:fixed; right:0; top:0; padding:5px 10px; background-color:#ddd;}
+.quick p {font-weight:bold;}
+.quick li {margin:0 0 0 8px;}
+.quick li span {display:block; width:5px; padding:0 0 0 8px;}
+.link-guide {display:block; margin-bottom:10px; text-decoration:underline; font-size:13px;}
+a {color:#545454; text-decoration:underline;}
+a:hover {color:#545454; text-decoration:none;}
+a.active {color:red; font-weight:bold;}
+table {width:100%; border-collapse:collapse; border:1px solid #666;}
+table + h1 {margin-top:3em;}
+tr.line1 {border-top:2px solid #787878;}
+th, td {vertical-align:middle; padding:5px 0; font-size:13px;}
+th {padding:6px; font-size:12px; text-align:center; color:#fff; border:1px solid #666; background-color:var(--main-color); font-weight:normal;}
+td {padding:4px 4px 4px 10px; text-align:left; border:1px solid #eee; background-color:#fff; line-height:1.4;}
+td.chk {padding:4px 4px 4px 4px; text-align:center;}
+td p {margin:10px 0 5px 0;}
+tr:hover td{background-color:#eee;}
+.done {color:#ca0404;}
+.ing {color:#028086;}
+.notice {padding:3px 0 10px 0; text-align:right; color:#ff0303; line-height:1.4;}
+
+:root {
+	--main-color:#FF4D43;
+}
+h1 {color:var(--main-color); font-weight:700;;}
+</style>
+	<script type="text/javascript" src="/js/lib/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var $lists = $('.menulist td').addClass('dir');
+			$lists
+				.find('td a')
+				.each(function(index){
+					var links = $(this).text();
+					$(this).attr('href', links).attr('target','_blank');
+
+				})
+				.end();
+			
+			//선택한거 파일 확인
+			$('a').on('click', function(){
+				$('a').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
+	</script>
+</head>
+<!-- html body -->
+<body>
+
+<h1>스마트전자영수증</h1>
+<table class="menulist">
+	<colgroup>
+		<col width="16%">
+		<col width="16%">
+		<col width="16%">
+		<col width="16%">
+		<col width="16%">
+		<col width="">
+	</colgroup>
+	<thead>
+		<tr>
+			<th scope="col">카테고리</th>
+			<th scope="col">Depth 1</th>
+			<th scope="col">Depth 2</th>
+			<th scope="col">Depth 3</th>
+			<th scope="col">파일명</th>
+			<th scope="col">비고</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="line1">
+			<td>스마트전자영수증(소상공인)</td>
+			<td>인트로</td>
+			<td></td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/intro.html">intro.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td>첫화면</td>
+			<td></td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/main.html">main.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td>첫화면</td>
+			<td></td>
+			<td>본인인증버튼</td>
+			<td><a target="_blank" href="./html/main2.html">main2.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td>서비스가입</td>
+			<td>기본정보등록</td>
+			<td>필수</td>
+			<td><a target="_blank" href="./html/join/join_signup01.html">join_signup01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>선택</td>
+			<td><a target="_blank" href="./html/join/join_signup02.html">join_signup02.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>약관동의</td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/join/join_agree.html">join_agree.html</a></td>
+			<td>-</td>
+		</tr>
+
+		<tr class="line1">
+			<td></td>
+			<td>홈</td>
+			<td>가입전</td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/home/home_before.html" style="text-decoration:line-through;">home_before.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>가입후</td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/home/home_after.html">home_after.html</a></td>
+			<td>-</td>
+		</tr>
+
+
+		
+
+
+
+
+		
+
+		<tr class="line1">
+			<td></td>
+			<td>내상점분석</td>
+			<td>상권분석</td>
+			<td>나의 상점정보</td>
+			<td><a target="_blank" href="./html/myservice/myservice_01_01.html">myservice_01_01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>주요 판매 품목</td>
+			<td><a target="_blank" href="./html/myservice/myservice_01_01_popup01.html">myservice_01_01_popup01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>지역별 상점정보</td>
+			<td><a target="_blank" href="./html/myservice/myservice_01_02.html">myservice_01_02.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>가격정보</td>
+			<td>동일업종 특정품목</td>
+			<td><a target="_blank" href="./html/myservice/myservice_02_01 .html">myservice_02_01 .html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>주요 판매품목 가격정보</td>
+			<td><a target="_blank" href="./html/myservice/myservice_02_01_popup01.html">myservice_02_01_popup01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>다른업종 특정품목</td>
+			<td><a target="_blank" href="./html/myservice/myservice_02_02.html">myservice_02_02.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>쿠폰관리</td>
+			<td>쿠폰리스트</td>
+			<td><a target="_blank" href="./html/myservice/myservice_03_01.html">myservice_03_01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>쿠폰 설정 변경</td>
+			<td><a target="_blank" href="./html/myservice/myservice_03_01_01.html">myservice_03_01_01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>쿠폰생성 - 타 상점 연계쿠폰</td>
+			<td><a target="_blank" href="./html/myservice/myservice_03_02_01.html">myservice_03_02_01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>쿠폰생성 - 재방문 쿠폰</td>
+			<td><a target="_blank" href="./html/myservice/myservice_03_02_02.html">myservice_03_02_02.html</a></td>
+			<td>-</td>
+		</tr>
+
+
+
+		<tr class="line1">
+			<td></td>
+			<td>내동의현황</td>
+			<td>데이터영수증</td>
+			<td>서비스동의</td>
+			<td><a target="_blank" href="./html/mydata/mydata_01_01.html">mydata_01_01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>서비스 이용 동의 데이터영수증</td>
+			<td><a target="_blank" href="./html/mydata/mydata_01_01_popup01.html">mydata_01_01_popup01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>제3자 제공 동의 데이터영수증</td>
+			<td><a target="_blank" href="./html/mydata/mydata_01_01_popup02.html">mydata_01_01_popup02.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>수집/이용</td>
+			<td><a target="_blank" href="./html/mydata/mydata_01_02.html">mydata_01_02.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>개인정보 수집/이용 데이터영수증</td>
+			<td><a target="_blank" href="./html/mydata/mydata_01_02_popup01.html">mydata_01_02_popup01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>내려받기</td>
+			<td><a target="_blank" href="./html/mydata/mydata_01_03.html">mydata_01_03.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>데이터 내려받기 데이터 영수증</td>
+			<td><a target="_blank" href="./html/mydata/mydata_01_03_popup01.html">mydata_01_03_popup01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>동의관리</td>
+			<td></td>
+			<td><a target="_blank" href="./html/mydata/mydata_02.html">mydata_02.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>회원정보/개인정보/매출정보 팝업</td>
+			<td><a target="_blank" href="./html/mydata/mydata_02_01.html">mydata_02_01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td><del>개인정보 수집항목</del></td>
+			<td><del><a target="_blank" href="./html/mydata/mydata_02_popup01.html">mydata_02_popup01.html</a></del></td>
+			<td>-</td>
+		</tr>
+		
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>동의관리 개인정보수집및이용동의(선택)</td>
+			<td><a target="_blank" href="./html/mydata/mydata_02_privacy01.html">mydata_02_privacy01.html</a></td>
+			<td>-</td>
+		</tr>
+
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>데이터 내려받기</td>
+			<td></td>
+			<td><a target="_blank" href="./html/mydata/mydata_03.html">mydata_03.html</a></td>
+			<td>-</td>
+		</tr>
+
+		<tr class="line1">
+			<td></td>
+			<td>설정</td>
+			<td>메인</td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/setting/setting.html">setting.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>서비스 이용안내</td>
+			<td>동의고객</td>
+			<td><a target="_blank" href="./html/customer/guide.html">guide.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>미동의 고객</td>
+			<td><a target="_blank" href="./html/customer/guide2.html">guide2.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>공지사항</td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/customer/notice.html">notice.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>FAQ</td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/customer/faq.html">faq.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>알림 설정</td>
+			<td>-</td>
+			<td><a target="_blank" href="./html/setting/set_alarm.html">set_alarm.html</a></td>
+			<td>-</td>
+		</tr>
+
+		
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>약관</td>
+			<td>개인정보처리방침</td>
+			<td><a target="_blank" href="./html/privacy/privacy00.html">privacy00.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>서비스이용약관(필수)</td>
+			<td><a target="_blank" href="./html/privacy/privacy01.html">privacy01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>개인정보수집및이용동의(필수)</td>
+			<td><a target="_blank" href="./html/privacy/privacy02.html">privacy02.html</a></td>
+			<td>-</td>
+		</tr>
+		
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>광고 및 마케팅 수신 동의(선택)</td>
+			<td><a target="_blank" href="./html/privacy/privacy03.html">privacy03.html</a></td>
+			<td>-</td>
+		</tr>
+		
+
+
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>로딩</td>
+			<td></td>
+			<td><a target="_blank" href="./html/etc/loading.html">loading.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>모달팝업</td>
+			<td>제목 + 내용</td>
+			<td><a target="_blank" href="./html/modal/modal_type1.html">modal_type1.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>내용</td>
+			<td><a target="_blank" href="./html/modal/modal_type2.html">modal_type2.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>쿠폰 수정</td>
+			<td><a target="_blank" href="./html/modal/modal_type3.html">modal_type3.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>에러</td>
+			<td><a target="_blank" href="./html/etc/error.html">error.html</a></td>
+			<td>-</td>
+		</tr>
+
+
+		<tr class="line1">
+			<td></td>
+			<td>마이페이지</td>
+			<td>가맹점정보</td>
+			<td></td>
+			<td><a target="_blank" href="./html/mypage/mypage_popup01.html">mypage_popup01.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td></td>
+			<td>매출정보</td>
+			<td></td>
+			<td><a target="_blank" href="./html/mypage/mypage_popup02.html">mypage_popup02.html</a></td>
+			<td>-</td>
+		</tr>
+
+		<tr class="line1">
+			<td></td>
+			<td>etc</td>
+			<td>팝업샘플</td>
+			<td>상단 간격 없는거</td>
+			<td><a target="_blank" href="./html/sample/popup_type1.html">popup_type1.html</a></td>
+			<td>-</td>
+		</tr>
+		<tr class="">
+			<td></td>
+			<td>etc</td>
+			<td>팝업샘플</td>
+			<td>상단 간격 있는거</td>
+			<td><a target="_blank" href="./html/sample/popup_type2.html">popup_type2.html</a></td>
+			<td>-</td>
+		</tr>
+
+	</tbody>
+</table>
+
+
+</body>
+<!-- //html body -->
+</html>

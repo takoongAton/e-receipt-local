@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+
+<div class="dim" style="display:block;"></div>
+<div class="modal_alert" id="test1" style="display:block;">
+	<div class="txt_wrap">
+		<p class="tit">쿠폰 등록내용을 수정하시겠습니까?</p>
+		<p class="txt tac">
+			<strong>1. 쿠폰명</strong><br />
+			아이스아메리카노 20% 할인쿠폰<br />
+			<strong>2. 발송 조건 </strong><br />
+			40대 / 300m 인근 / 11:00 ~ 12:00<br />
+			<strong>3. 유효기간</strong><br />
+			D+30<br />
+			<strong>4. 최대발송건수</strong><br />
+			하루 50 / 전체 1,000<br />
+			<strong>5. 할인조건</strong><br />
+			할인율 20% / 아메리카노<br />
+			<strong>6. 메시지</strong><br />
+			시원한 아이스아메리카노 드시러 오세요!<br />
+			<strong>7. 쿠폰암호</strong><br />
+			1234</p>
+	</div>
+	<div class="btn_group">
+		<div><button type="button" class="cancel"><span>아니오</span></button></div>
+		<div><button type="button" class="next"><span>예</span></button></div>
+	</div>
+</div><!-- // modal_alert -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	$(".modal_alert button").on("click", function(){
+		$(".dim").hide();
+		$(this).parents(".modal_alert").hide();
+	})
+
+	$(".pop_footer .cancel").on("click", function(){
+		$(this).parents(".popup").slideUp(200);
+	})
+
+})
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="page_tit">
+			<h2 class="tit">전자영수증 상세내역 조회</h2>
+			<div>
+				<button type="button" class="down"><span>다운로드</span></button>
+				<button type="button" class="share"><span>공유하기</span></button>
+				<button type="button" class="close"><span>닫기</span></button>
+			</div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+
+		<div class="detail_compnay">
+			<dl>
+				<dt><strong>공차 고속터미널점</strong></dt>
+				<dd class="date">2021.06.10 10:12:24 (정상결제)</dd>
+				<dd class="sum"><strong>54,860</strong><span>원</span></dd>
+			</dl>
+		</div>
+
+		<div class="receipt_wrap">
+
+			<div class="receipt_table">
+
+				<div class="total">
+					<div>
+						<span class="txt">공급가</span>
+						<span class="money">14,980</span>
+					</div>
+					<div>
+						<span class="txt">부가세</span>
+						<span class="money">1,990</span>
+					</div>
+					<div>
+						<span class="txt">봉사료</span>
+						<span class="money">200</span>
+					</div>
+				</div>
+
+				<div class="sum_wrap">
+					<div class="sum">
+						<span>합계금액</span>
+						<span>15,900</span>
+					</div>
+				</div>
+			</div><!-- // receipt_table -->
+
+			<div class="receipt_item">
+				<div class="tit">[카드 신용 승인]</div>
+				<dl>
+					<dt>승인일시</dt>
+					<dd>2020-05-11 20:41:55</dd>
+				</dl>
+				<dl>
+					<dt>카드번호</dt>
+					<dd>538920******5573</dd>
+				</dl>
+				<dl>
+					<dt>카드사명</dt>
+					<dd>씨티카드</dd>
+				</dl>
+				<dl>
+					<dt>승인번호</dt>
+					<dd>74255341</dd>
+				</dl>
+				<dl>
+					<dt>할부개월</dt>
+					<dd>00</dd>
+				</dl>
+				<dl>
+					<dt>승인금액</dt>
+					<dd>4,170</dd>
+				</dl>
+				<dl>
+					<dt>가맹번호</dt>
+					<dd>704189006</dd>
+				</dl>
+				<dl>
+					<dt>매입사명</dt>
+					<dd>BC카드사</dd>
+				</dl>
+				<dl>
+					<dt>알림</dt>
+					<dd>5만원 이하 무서명 거래입니다.</dd>
+				</dl>
+			</div>
+
+			<!-- <div class="map"><img src="../../images/temp/sam_map.png" alt="지도" /></div> -->
+
+			<div class="btn_detail"><button type="button"><span>품목정보 상세보기</span></button></div>
+
+			<div class="receipt_footer">
+				<p>감사합니다.</p>
+			</div>
+
+			<div class="receipt_item">
+				<div class="tit">[가맹점 정보]</div>
+				<div class="map"><img src="../../images/temp/sam_map.png" alt="지도"></div>
+				<dl class="affiliate_info">
+					<dt>주소</dt>
+					<dd>경기 김포시 풍무로 188</dd>
+				</dl>
+				<dl class="affiliate_info">
+					<dt>연락처</dt>
+					<dd>031.123.1234</dd>
+				</dl>
+				<dl class="affiliate_info">
+					<dt>사업자번호</dt>
+					<dd>1234-1234-1234</dd>
+				</dl>
+				<dl class="affiliate_info">
+					<dt>대표자명</dt>
+					<dd>김철수</dd>
+				</dl>
+				<div class="bnr"><img src="../../images/temp/detail_bnr.png" alt="배너"></div>
+			</div>
+
+		</div><!-- receipt_wrap -->
+
+	</div><!-- // container -->
+
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+})
+</script>
+
+</body>
+</html>

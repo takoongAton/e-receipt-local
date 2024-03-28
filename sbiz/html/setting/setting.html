@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+	<title>admin</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+	<link rel="stylesheet" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../css/common_sbiz.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../../images/common/favicon.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=block" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- <script src="../../js/jquery-1.12.4.min.js"></script> -->
+</head>
+<body>
+
+<div class="wrap">
+	<header>
+		<div class="gnb_wrap">
+			<ul class="gnb">
+				<li><span>홈</span></li>
+				<li><span>이용내역</span></li>
+				<li><span>신청관리</span></li>
+				<li class="on"><span>설정</span></li>
+			</ul>
+			<div class="tools">
+				<button type="button" class="mypage"><span>메뉴</span></button>
+			</div>
+		</div>
+	</header><!-- // header -->
+
+	<div class="container">
+		<div class="general_wrap">
+			<ul class="general_list">
+				<li class="depth1">
+					<p><span class="tit">서비스 이용안내</span></p>
+				</li>
+				<li class="depth1">
+					<p><span class="tit">공지사항</span></p>
+				</li>
+				<li class="depth1">
+					<p><span class="tit">FAQ</span></p>
+				</li>
+
+				<li class="depth1">
+					<p><span class="tit">약관</span><span class="bul"></span></p>
+					<ul class="depth2_wrap">
+						<li class="depth2"><p>서비스 이용약관 동의 [필수]</p></li>
+						<li class="depth2"><p>개인정보 수집 및 이용 동의 [필수]</p></li>
+						<li class="depth2"><p>개인정보 제3자 제공동의 [필수]</p></li>
+						<!-- <li class="depth2"><p>비씨카드를 통한 개인정보 등 수집동의 [선택]</p></li> -->
+						<li class="depth2"><p>광고 및 마케팅 수신 동의 [선택]</p></li>
+						<li class="depth2"><p>개인정보 처리방침</p></li>
+					</ul>
+				</li>
+				<li class="depth1">
+					<p><span class="tit">알림설정</span></p>
+				</li>
+				<li class="depth1">
+					<p><span class="tit">서비스 해지</span></p>
+				</li>
+			</ul>
+		</div><!-- // general_wrap -->
+	</div><!-- // container -->
+
+	<div class="app_ver">
+		<p><strong>앱 버전 v1.0</strong> <span>최신버전입니다.</span></p>
+	</div>
+
+</div><!-- // wrap -->
+
+
+
+<script src="../../js/temp.js"></script>
+
+<script>
+$(document).ready(function(){
+	
+	function findFooter() {
+		var $footer = $("body").find("footer");
+		if($footer.length > 0) {
+			$(".wrap").css({
+				"padding-bottom" : "72px"
+			})
+		}
+	}
+	findFooter();
+
+})
+</script>
+
+</body>
+</html>
+
